@@ -1,0 +1,96 @@
+<!-- <view class='center_container'> -->
+  <scroll-view class='center_container' scroll-y>
+    <van-tabs active="{{ active }}" color="#0087FF" bind:change="tabOnChange">
+      <van-tab title="绑定银行卡">
+        <view class='wing_blank'>
+          <view class='tranparent_space'></view>
+          <view class='getMoneyInfo box_border_radius box_margin_top'>
+            <view class='line1'>
+              <view class='f-34'>绑定银行卡</view>
+            </view>
+            <view class='line2'>
+              <view class='cell_group box_border_radius box_margin_top'>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    姓名：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                     <input class='input'  placeholder-class="placeholder_class" placeholder="请输入真实姓名" data-name='bankname' bindinput='getValue' value="{{bankname}}"/>
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    开户行：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    <input class='input' placeholder-class="placeholder_class" placeholder="请输入开户银行" data-name='deposit_bank' bindinput='getValue' value="{{deposit_bank}}"/>
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    银行卡：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    <input class='input' placeholder-class="placeholder_class" placeholder="请输入银行卡号" data-name='bankcard' bindinput='getValue' value="{{bankcard}}"/>
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    手机号：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    <input class='input' maxlength='11' placeholder-class="placeholder_class" placeholder="请输入联系号码" data-name='mobile' bindinput='getValue' value="{{mobile}}"/>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="绑定支付宝">
+        <view class='wing_blank'>
+          <view class='tranparent_space'></view>
+          <view class='getMoneyInfo box_border_radius box_margin_top'>
+            <view class='line1'>
+              <view class='f-34'>绑定支付宝</view>
+            </view>
+            <view class='line2'>
+              <view class='cell_group box_border_radius box_margin_top'>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    姓名：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                     <input class='input' placeholder-class="placeholder_class" placeholder="请输入真实姓名" data-name='bankname' bindinput='getValue' value="{{bankname}}"/>
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    账号：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    <input class='input' placeholder-class="placeholder_class" placeholder="请输入支付宝账号" data-name='bankcard' bindinput='getValue' value="{{bankcard}}"/>
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    手机号：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    <input class='input' maxlength='11' placeholder-class="placeholder_class" placeholder="请输入联系号码" data-name='mobile' bindinput='getValue' value="{{mobile}}"/>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </van-tab>
+    </van-tabs>
+    <view class='tranparent_space'></view>
+    <view class='tranparent_space'></view>
+    <view class='wing_blank'>
+      <van-button round="true" size="large" type="info" bindtap='submit'>立刻绑定</van-button>
+    </view>
+    <view class='tranparent_space'></view>
+  </scroll-view>
+<!-- </view> -->

@@ -1,0 +1,114 @@
+<view class="checkout_container">
+  <!-- 配送地址 -->
+  <view>
+    <view wx:if="{{address.address_id}}">
+      <view class="b-f">
+        <view class="flow-checkout-header" bindtap='toGetAddress'>
+          <text class="iconfont icon icon-dingwei"></text>
+          <view class="flow-header-left">
+            <view class="flow-checkout-admin f-30 col-3">
+              <text>{{address.name}}</text>
+              <text>{{address.phone}}</text>
+              <text class="col-m"></text>
+            </view>
+            <view class="flow-checkout-address">
+              {{address.detail}}
+            </view>
+          </view>
+          <text class="iconfont icon icon-right_arrow address_arrow"></text>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="flow-checkout-header" bindtap='toJoin'>
+        <text class="iconfont icon-dingwei1"></text>
+        <view class="flow-header-left">
+          <view class="f-28 col-6">去认证成为商户
+          </view>
+        </view>
+        <view class="flow-header-right p-r15">
+          <text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商品列表 -->
+  <view class="m-top20">
+    <view class="checkout_list " wx:for="{{goods_list}}" wx:key="this">
+      <navigator url="../goods/index?goods_id={{item.goods_id}}">
+        <view class="dis-flex flow-shopList" data-index="{{index}}">
+          <view class="flow-list-left">
+            <image mode="scaleToFill" src="{{item.image[0].file_path}}"></image>
+          </view>
+          <view class="flow-list-right">
+            <view class="f-34 col-3 goods_name">{{item.goods_name}}</view>
+            <view class="f-30 col-3">{{item.goods_sku.goods_attr}}</view>
+            <view class="flow-list-cont">
+              <text class="flow-cont">￥{{item.goods_price}}</text>
+              <text class="small">×{{item.total_num}}</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view class="flow-num-box b-f padding-box">
+      <text>共{{order_total_num}}件商品，合计：</text>
+      <text class="flow-money col-m">￥{{order_total_price}}</text>
+    </view>
+  </view>
+  <view class="flow-all-money b-f padding-box m-top20">
+    <view class="dis-flex flow-all-list">
+      <text style="flex:auto">我的积分:100</text>
+      <view style="flex:0 0 170rpx;">
+        <van-checkbox
+          label-position="left"
+          shape="square"
+          value="{{ integral_checked }}"
+          checked-color="#FF6000"
+          bind:change="onChangeIntegral"
+        >
+          积分抵扣
+        </van-checkbox>
+      </view>
+    </view>
+  </view>
+  <!-- 商品金额 -->
+  <view class="flow-all-money b-f padding-box m-top20" style='margin-bottom:130rpx'>
+    <view class="flow-all-list" style='overflow:hidden'>
+      <text class="" style='width:43%;float:left'>配送方式:</text>
+      <view class="color_text_l" style='float:right;'>
+        快递 免邮
+      </view>
+    </view>
+    <view class="dis-flex flow-all-list">
+      <text class="flex-five">商品金额:</text>
+      <view class="flex-five t-r">
+        <text class="col-m">￥{{order_total_price}}</text>
+      </view>
+    </view>
+    <view class="dis-flex flow-all-list">
+      <text class="flex-five">运费:</text>
+      <view class="flex-five t-r">
+        <text class="col-m">+ ￥0</text>
+      </view>
+    </view>
+    <view class="dis-flex flow-all-list">
+      <text class="flex-five">立减:</text>
+      <view class="flex-five t-r">
+        <text class="col-m">- ￥5.0</text>
+      </view>
+    </view>
+  </view>
+  <!-- 提交订单 -->
+  <view class="flow-fixed-footer b-f m-top10">
+    <view class="dis-flex chackout-box">
+      <view class=" chackout-left pl-12 ">实付款：
+        <text class="col-m">￥{{order_pay_price}}</text>
+      </view>
+      <view bindtap="submitOrder" class="chackout-right">
+        <text class="flow-btn">提交订单</text>
+      </view>
+    </view>
+  </view>
+</view>

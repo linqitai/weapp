@@ -1,0 +1,192 @@
+<!-- <view class='center_container'> -->
+  <scroll-view class='center_container' scroll-y>
+    <van-tabs active="{{ active }}" color="#0087FF" bind:change="tabOnChange">
+      <van-tab title="余额提现">
+        <view class='wing_blank'>
+          <view class='tranparent_space'></view>
+          <view class='cell_group box_border_radius box_margin_top'>
+            <view class='cell'>
+              <view class='cell_left color_text2'>
+                账户余额
+              </view>
+              <view class='cell_right'>
+                <view style='text-align:right'>
+                  <text class='text_digit'>{{money}}</text>
+                  <text class='text'>元</text>
+                </view>
+              </view>
+            </view>
+            <view class='cell'>
+              <view class='cell_left color_text'>
+                提现金额
+              </view>
+              <view class='cell_right'>
+                <input class='inputMoney' data-name='value' bindinput='getValue' placeholder-class="inputMoneyPlaceholder" placeholder="请输入提现金额" value="{{value}}"/>
+              </view>
+            </view>
+          </view>
+          <view class='color_text2 f-26 tip1'>提现金额不能小于1.00元</view>
+          <view class='getMoneyInfo box_border_radius box_margin_top'>
+            <view class='line1'>
+              <view class='f-34'>提现信息</view>
+            </view>
+            <view class='line2' wx:if="{{hasInfo==false}}">
+              <view>
+                <view class='tip2 f-30 color_text2'>请完善您的基本信息</view>
+                <view class='icon_btn theme_color' bindtap='toBindView'>
+                  <!-- <text class="icon icon-add"></text> -->
+                  <van-icon class='this_icon' size="1em" name="plus"/><text class='bind_card'>绑定银行卡</text>
+                </view>
+              </view>
+            </view>
+            <view class='line2' wx:if="{{hasInfo==true}}">
+              <view class='cell_group box_border_radius box_margin_top' wx:if="{{type==1}}">
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    姓名：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                     {{bankname}}
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    开户行：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    {{deposit_bank}}
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    银行卡：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    {{bankcard}}
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    手机号：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    {{mobile}}
+                  </view>
+                </view>
+              </view>
+              <view class='cell_group box_border_radius box_margin_top' wx:if="{{type==2}}">
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    姓名：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                     {{bankname}}
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    账号：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    {{bankcard}}
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    手机号：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    {{mobile}}
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="佣金提现">
+        <view class='wing_blank'>
+          <view class='tranparent_space'></view>
+          <view class='cell_group box_border_radius box_margin_top'>
+            <view class='cell'>
+              <view class='cell_left color_text2'>
+                账户佣金
+              </view>
+              <view class='cell_right'>
+                <view style='text-align:right'>
+                  <text class='text_digit'>{{money}}</text>
+                  <text class='text'>积分</text>
+                </view>
+              </view>
+            </view>
+            <view class='cell'>
+              <view class='cell_left color_text'>
+                提现佣金
+              </view>
+              <view class='cell_right'>
+                <input class='inputMoney' data-name='value' bindinput='getValue'  placeholder-class="inputMoneyPlaceholder" placeholder="请输入提现佣金" value="{{value}}"/>
+              </view>
+            </view>
+          </view>
+          <view class='color_text2 f-26 tip1'>提现佣金不能小于1000积分</view>
+          <view class='getMoneyInfo box_border_radius box_margin_top'>
+            <view class='line1'>
+              <view class='f-34'>提现信息</view>
+            </view>
+            <view class='line2' wx:if="{{hasInfo==false}}">
+              <view>
+                <view class='tip2 f-30 color_text2'>请完善您的基本信息</view>
+                <view class='icon_btn theme_color' bindtap='toBindView'>
+                  <!-- <text class="icon icon-add"></text> -->
+                  <van-icon class='this_icon' size="1em" name="plus"/><text class='bind_card'>绑定银行卡</text>
+                </view>
+              </view>
+            </view>
+            <view class='line2' wx:if="{{hasInfo==true}}">
+              <view class='cell_group box_border_radius box_margin_top'>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    姓名：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                     {{bankname}}
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    开户行：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    {{deposit_bank}}
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    银行卡：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    {{bankcard}}
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    手机号：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    {{mobile}}
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </van-tab>
+    </van-tabs>
+    <view class='tranparent_space'></view>
+    <view class='tranparent_space'></view>
+    <view class='wing_blank'>
+      <van-button round="true" size="large" type="info" bind:click="submit">提交申请</van-button>
+    </view>
+    <view class='tranparent_space'></view>
+  </scroll-view>
+<!-- </view> -->

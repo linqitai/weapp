@@ -1,0 +1,31 @@
+<view style="height:{{windowHeight}}px" class='coupon_container container'>
+    <scroll-view class="list" lower-threshold="100" scroll-y="true" bindscrolltolower="scrollToBottom" bindscroll="scroll" wx:if="{{list.length}}">
+      <view class='item' wx:for="{{list}}">
+        <view class='item_left'>
+          <image class='image' src="{{item.avatarUrl}}" mode='aspectFit'></image>
+        </view>
+        <view class='item_right'>
+          <view class='item_right_left'>
+            <view class='name color_text f-38 margT'>{{item.nickName}}</view>
+            <view class="time color_text_l f-30 margT">加入时间：{{item.create_time}}</view>
+          </view>
+          <view class='item_right_right'>
+            <view class='money dec_color margT'>
+              <text class='f-42'>{{item.total_price}}</text><text class='f-30'>元</text>
+            </view>
+            <view class='f-30 color_text_l margT'>销售业绩</view>
+          </view>
+        </view>
+      </view>
+      <!-- 底线 -->
+      <view class="title-footer p-r" wx:if="{{!isLastPage}}">
+        <text class="f-24 col-9 cont">数据加载完毕</text>
+      </view>
+    </scroll-view>
+    <view wx:else>
+      <view class="yoshop-notcont">
+        <text class="iconfont icon-null icon"></text>
+        <text class="cont">亲，您还没有团队</text>
+      </view>
+    </view>
+</view>

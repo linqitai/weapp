@@ -1,0 +1,7 @@
+<!-- 搜索框 -->
+<view class="diy-search-box">
+  <view class="diy-search flex-box">
+    <text class="iconfont icon-sousuo f-14"></text>
+    <text class="f-14">点击输入内容搜索</text>
+  </view>
+</view>

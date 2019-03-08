@@ -1,0 +1,224 @@
+/**index.wxss**/
+.person_container{
+  padding: 0px 24rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #F6F6F6;
+}
+.header{
+  background-color: white;
+  padding: 0px 28rpx;
+}
+.personInfoBox{
+  clear: both;
+  width: 100%;
+  padding-bottom: 28rpx;
+  border-bottom: 1rpx solid #efefef;
+  box-sizing: border-box;
+  display: flex;
+}
+.personInfoBox .leftInfo{
+  flex: 0 0 180rpx;
+  /* float: left; */
+  padding-top: 32rpx;
+}
+.personInfoBox .leftInfo .image{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 100%;
+  background-color: rgb(25, 25, 167);
+  display: block;
+}
+.personInfoBox .rightInfo{
+  flex: auto;
+  /* float: left; */
+  margin-top: 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  height: 140rpx;
+}
+.personInfoBox .rightInfo .line1,.personInfoBox .rightInfo .line2,.personInfoBox .rightInfo .line3{
+  flex: 1;
+  height: 52rpx;
+  line-height: 52rpx;
+}
+.personInfoBox .rightInfo .line1{
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #323232;
+}
+.personInfoBox .rightInfo .line1 .line1_edit{
+  font-size: 28rpx;
+  color: #b9b9b9;
+  font-weight: 400 !important;
+}
+.personInfoBox .rightInfo .line1 .cell_right_icon{
+  font-size: 24rpx;
+  color: #b9b9b9;
+  margin-top: 1rpx;
+}
+.personInfoBox .rightInfo .line2{
+  font-size: 26rpx;
+  color: #b9b9b9;
+}
+.personInfoBox .rightInfo .line3{
+  font-size: 28rpx;
+  color: #a8a8a8;
+}
+.moneyBox{
+  height: 140rpx;
+  display: flex;
+  flex-direction: row;
+}
+.moneyBox .leftMoney,.moneyBox .rightMoney{
+  flex: 1;
+  padding: 20rpx 0px;
+  text-align: center;
+}
+.moneyBox .leftMoney .line1,.moneyBox .rightMoney .line1{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 36rpx;
+  color: #323232;
+}
+.moneyBox .leftMoney .line2,.moneyBox .rightMoney .line2{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  color: #b9b9b9;
+}
+.moneyBox .rightMoney .getMoney{
+  float: right;
+  letter-spacing: 1rpx;
+  color: #646464;
+}
+.orderRecordBox{
+  background-color: white;
+  padding: 24rpx 28rpx;
+}
+.orderRecordBox .line1 .my_order{
+  float: left;
+  font-size: 34rpx;
+}
+.orderRecordBox .line1 .all_order{
+  float: right;
+}
+.orderRecordBox .line1 .line1_edit{
+  font-size: 30rpx;
+  color: #b9b9b9;
+  font-weight: 400 !important;
+}
+.orderRecordBox .line1 .cell_right_icon{
+  font-size: 24rpx;
+  color: #b9b9b9;
+  margin-top: 6rpx;
+}
+.orderRecordBox .line2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 32rpx;
+  clear: both;
+}
+.orderRecordBox .line2 .item{
+  flex: 1;
+  text-align: center;
+}
+.orderRecordBox .line2 .item .icon{
+  position: relative;
+  font-size: 52rpx;
+}
+.orderRecordBox .line2 .item .text{
+  font-size: 26rpx;
+  color: #646464;
+}
+.orderRecordBox .line2 .item .tag{
+  position: absolute;
+  right: -12rpx;
+  top: -8rpx;
+  color: white;
+  background-color: #FA1919;
+  width: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  border-radius: 100%;
+  font-size: 24rpx;
+  z-index: 100;
+}
+.cell_icon .icon{
+  height: 100rpx;
+  line-height: 88rpx;
+}
+/* .moneyRecordBox .leftRecord{
+  flex: 1;
+}
+.moneyRecordBox .leftRecord .line1,.moneyRecordBox .leftRecord .line2{
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.moneyRecordBox .leftRecord .line1{
+  color: #323232;
+  font-size: 32rpx;
+}
+.moneyRecordBox .leftRecord .line2{
+  color: #a8a8a8;
+  font-size: 28rpx;
+} */
+/* .moneyRecordBox .rightRecord{
+  flex: 1;
+}
+.moneyRecordBox .rightRecord .line1,.moneyRecordBox .rightRecord .line2{
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.moneyRecordBox .rightRecord .line1{
+  color: #323232;
+  font-size: 32rpx;
+}
+.moneyRecordBox .rightRecord .line2{
+  color: #a8a8a8;
+  font-size: 28rpx;
+} */
+
+.cell_group{
+  overflow: hidden;
+  background-color: white;
+}
+.cell_group .cell{
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 28rpx;
+}
+.cell_group .cell .cell_icon{
+  flex: 0 0 72rpx;
+  padding-top: 6rpx;
+}
+.cell_group .cell .cell_icon .icon_style{
+  font-size: 48rpx;
+  color: #FF9D42;
+}
+.cell_group .cell .cell_content{
+  flex: auto;
+  border-bottom: 1rpx solid #efefef;
+}
+.cell_group .cell:last-child .cell_content{
+  border-bottom: 1rpx solid transparent;
+}
+.cell_group .cell .cell_content .cell_right_icon{
+  color: #a8a8a8;
+  margin-top: 4rpx;
+  margin-left: 12rpx;
+}
+.cell_group .cell .cell_content .cell_text{
+  font-size: 26rpx;
+  color: #b9b9b9;
+}
+.cell_group .cell .cell_content .cell_title{
+  font-size: 30rpx;
+  color: #323232;
+}

@@ -1,0 +1,114 @@
+<!--index.wxml-->
+<scroll-view class="person_container" scroll-y>
+  <view class='tranparent_space'></view>
+  <view class='header box_border_radius'>
+    <view class='personInfoBox'>
+      <view class='leftInfo'>
+        <image class='image'></image>
+      </view>
+      <view class='rightInfo'>
+        <view class='line1'>
+          <view class='left'>{{userInfo.nickName?userInfo.nickName:'---------'}}</view>
+          <view class='right'>
+            <van-icon class='cell_right_icon right' name="arrow"/>
+            <view class='line1_edit right'>修改</view>
+          </view>
+        </view>
+        <view class='line2'>[普通会员]</view>
+        <view class='line3'>推荐人：李木子</view>
+      </view>
+    </view>
+    <view class='moneyBox'>
+      <view class='leftMoney'>
+        <view class='line1'>{{userInfo.money['available']?userInfo.money['available']:'0.00'}}</view>
+        <view class='line2'>余额（元）</view>
+      </view>
+      <view class='rightMoney'>
+        <view class='line1'>{{userInfo.integral.available?userInfo.integral.available:'0'}}</view>
+        <view class='line2'>积分</view>
+      </view>
+    </view>
+  </view>
+  <view class='orderRecordBox box_border_radius box_margin_top'>
+    <view class='line1 clear'>
+      <view class='my_order'>我的订单</view>
+      <view class='all_order'>
+        <van-icon class='cell_right_icon right' name="arrow"/>
+        <view class='line1_edit right'>全部订单</view>
+      </view>
+    </view>
+    <view class='line2'>
+      <view class='item'>
+        <navigator hover-class="navigator-hover" url="../order/index?type=payment" open-type='navigate'>
+        <text class='icon icon-daifukuan'><text class='tag' wx:if="{{orderCount.payment>0}}">{{orderCount.payment}}</text></text>
+        <view class='text'>待付款</view>
+        </navigator>
+      </view>
+      <view class='item'>
+        <navigator hover-class="navigator-hover" url="../order/index?type=delivery" open-type='navigate'>
+        <text class='icon icon-daifahuo'><text class='tag' wx:if="{{orderCount.delivery>0}}">{{orderCount.delivery}}</text></text>
+        <view class='text'>待发货</view>
+        </navigator>
+      </view>
+      <view class='item'>
+        <navigator hover-class="navigator-hover" url="../order/index?type=received" open-type='navigate'>
+        <text class='icon icon-yifahuo'><text class='tag' wx:if="{{orderCount.received>0}}">{{orderCount.received}}</text></text>
+        <view class='text'>待收货</view>
+        </navigator>
+      </view>
+      <view class='item'>
+        <navigator hover-class="navigator-hover" url="../order/index?type=complete" open-type='navigate'>
+        <text class='icon icon-yishouhuo'></text>
+        <view class='text'>已完成</view>
+        </navigator>
+      </view>
+      <view class='item'>
+        <text class='icon icon-shouhou'></text>
+        <view class='text'>售后服务</view>
+      </view>
+    </view> 
+  </view>
+  
+  <view class='cell_group box_border_radius box_margin_top'>
+    <!-- <view class='cell'>
+      <view class='cell_icon'>
+        <text class='icon icon-shoucang' style='font-size: 24px;color: #FD5F62;'></text>
+      </view>
+      <view class='cell_content'>
+        <view class='cell_title left'>我的收藏</view>
+        <van-icon class='cell_right_icon right' name="arrow" />
+      </view>
+    </view> -->
+    <view class='cell'>
+      <view class='cell_icon'>
+        <text class='icon icon-zhangdan' style='font-size: 24px;color: #41BDF2;'></text>
+        <!-- <van-icon class='cell_right_icon' style='font-size: 22px;color: #41BDF2;margin-left:1px;' name="orders-o" /> -->
+      </view>
+      <view class='cell_content'>
+        <view class='cell_title left'>账单明细</view>
+        <van-icon class='cell_right_icon right' name="arrow" />
+      </view>
+    </view>
+    <view class='cell'>
+      <view class='cell_icon'>
+        <text class='icon icon-dizhi' style='font-size: 24px;color: #0CB7B9;'></text>
+        <!-- <van-icon class='cell_right_icon' style='font-size: 24px;color: #FD6263;' name="balance-list-o" /> -->
+      </view>
+      <navigator class='cell_content' url="../address/index">
+        <view class='cell_title left'>收货地址</view>
+        <van-icon class='cell_right_icon right' name="arrow" />
+      </navigator>
+    </view>
+    <view class='cell'>
+      <view class='cell_icon'>
+        <text class='icon icon-kefu' style='font-size: 24px;color: #FF8E2A;'></text>
+        <!-- <van-icon class='cell_right_icon' style='font-size: 24px;color: #FF6DAF;' name="friends-o" /> -->
+      </view>
+      <view class='cell_content'>
+        <view class='cell_title left'>客服热线</view>
+        <van-icon class='cell_right_icon right' name="arrow" />
+      </view>
+    </view>
+  </view>
+  <view class='tranparent_space'></view>
+</scroll-view>

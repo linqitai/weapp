@@ -1,0 +1,36 @@
+.list{
+  background-color: white;
+}
+.list .item{
+  display: flex;
+  padding: 20rpx 32rpx;
+}
+.list .item .item_left{
+  flex: 0 0 150rpx;
+}
+.list .item .item_left image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+}
+.list .item .item_right{
+  flex: auto;
+  display: flex;
+  border-bottom: 1rpx solid #efefef;
+}
+.list .item:last-child .item_right{
+  border-bottom: 1rpx solid transparent;
+}
+.list .item .item_right .item_right_left{
+  flex: auto;
+}
+.list .item .item_right .item_right_left .name{
+  font-weight: bold;
+}
+.list .item .item_right .item_right_right{
+  flex: 0 0 200rpx;
+  text-align: right;
+}
+.margT{
+  margin-top: 10rpx;
+}

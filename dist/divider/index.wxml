@@ -1,0 +1,20 @@
+<view class="i-divider i-class" style="{{parse.getStyle(color,size,height,backgroundColor)}}">
+    <view class="i-divider-content" wx:if="{{content !== ''}}">
+        {{content}}
+    </view>
+    <view class="i-divider-content" wx:else>
+        <slot></slot>
+    </view>
+    <view class="i-divider-line" style="background:{{lineColor}}"></view>
+</view>
+<wxs module="parse">
+    module.exports = {
+        getStyle : function(color,size,height,backgroundColor){
+            var color = 'color:' + color +';';
+            var size = 'font-size:' + size + 'px;';
+            var height = 'height:' + height+'px;'
+            var backgroundColor = 'background-color:' + backgroundColor +';'      
+            return color + size + height + backgroundColor;
+        }
+    }
+</wxs>

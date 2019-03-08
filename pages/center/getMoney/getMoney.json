@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "佣金提现",
+  "usingComponents": {
+    "van-button": "../../../dist/button/index"
+  }
+}

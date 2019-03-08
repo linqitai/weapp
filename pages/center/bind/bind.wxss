@@ -1,0 +1,82 @@
+/**index.wxss**/
+.center_container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #F6F6F6;
+}
+.tip1{
+  margin-top: 10rpx;
+  margin-left: 24rpx;
+}
+.cell_group{
+  overflow: hidden;
+  background-color: white;
+}
+.cell_group .cell{
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.cell_group .cell .cell_left{
+  flex: 1;
+  padding-top: 6rpx;
+  font-size: 32rpx;
+}
+.cell_group .cell .cell_right{
+  flex: 1;
+}
+.cell_group .cell .cell_right .inputMoney{
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: right;
+}
+.cell_group .cell .cell_right .text{
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}
+.cell_group .cell:last-child{
+  border-bottom: 1rpx solid transparent;
+}
+.getMoneyBtn{
+  margin-top: 40rpx;
+}
+.inputMoneyPlaceholder{
+  color: #c7c7c7;
+}
+
+.getMoneyInfo{
+  overflow: hidden;
+  background-color: white;
+  padding: 24rpx 28rpx;
+}
+.line2 .tip2{
+  margin-top: 50rpx;
+}
+.line2 .icon_btn{
+  height: 200rpx;
+  line-height: 200rpx;
+  text-align: center;
+  font-size: 38rpx;
+}
+.line2 .icon_btn .this_icon{
+  font-size: 34rpx;
+}
+.line2 .icon_btn .bind_card{
+  margin-left: 8rpx;
+}
+
+.line2 .cell_right .input{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #646464;
+  margin-top: 20rpx;
+}
+.placeholder_class{
+  color: #c7c7c7;
+}

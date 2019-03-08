@@ -1,0 +1,91 @@
+<!-- <view class='center_container'> -->
+  <scroll-view class='center_container' scroll-y>
+    <view class='tranparent_space'></view>
+    <view class='header box_border_radius'>
+      <view class='personInfoBox'>
+        <view class='leftInfo'>
+          <image class='image' src="{{avatarUrl}}" mode='aspectFit'></image>
+        </view>
+        <view class='rightInfo'>
+          <view class='line1'>{{nickName}}</view>
+          <view class='line2'>[{{position}}]</view>
+          <view class='line3'>推荐人：{{parent_name}}</view>
+        </view>
+      </view>
+      <view class='moneyBox'>
+        <view class='leftMoney'>
+          <view class='line1'>{{available}}</view>
+          <view class='line2'>可提现佣金（元）</view>
+        </view>
+        <view class='rightMoney'>
+          <van-button class='getMoney' type="default" size="small" bind:click="getMoneyBtn">提现</van-button>
+        </view>
+      </view>
+    </view>
+    <view class='moneyRecordBox box_border_radius box_margin_top'>
+      <view class='leftRecord'>
+        <view class='line1'>{{total}}</view>
+        <view class='line2'>总佣金（元）</view>
+      </view>
+      <view class='rightRecord'>
+        <view class='line1'>{{used}}</view>
+        <view class='line2'>已使用佣金（元）</view>
+      </view>
+    </view>
+    
+    <view class='cell_group box_border_radius box_margin_top'>
+      <!-- <view class='cell'>
+        <view class='cell_icon'>
+          <van-icon class='cell_right_icon' style='font-size: 24px;color: #FF9D42;' name="medel-o" />
+        </view>
+        <view class='cell_content'>
+          <view class='cell_title left'>分销佣金</view>
+          <van-icon class='cell_right_icon right' name="arrow" />
+        </view>
+      </view> -->
+      <navigator class='cell'  hover-class="navigator-hover" url="./order/order" open-type='navigate'>
+        <view class='cell_icon'>
+          <!-- <text class='icon icon-add2'></text> -->
+          <van-icon class='cell_right_icon' style='font-size: 22px;color: #41BDF2;margin-left:1px;' name="orders-o" />
+        </view>
+        <view class='cell_content'>
+          <view class='cell_title left'>分销订单</view>
+          <van-icon class='cell_right_icon right' name="arrow" />
+          <!-- <view class='cell_text right'>0.00元</view> -->
+        </view>
+      </navigator>
+      <navigator class='cell'  hover-class="navigator-hover" url="./getMoneyDetail/getMoneyDetail" open-type='navigate'>
+        <view class='cell_icon'>
+          <!-- <text class='icon icon-add2'></text>../getMoneyDetail/getMoneyDetail -->
+          <van-icon class='cell_right_icon' style='font-size: 24px;color: #FD6263;' name="balance-list-o" />
+        </view>
+        <view class='cell_content'>
+          <view class='cell_title left'>提现明细</view>
+          <van-icon class='cell_right_icon right' name="arrow" />
+          <!-- <view class='cell_text right'>0.00元</view> -->
+        </view>
+      </navigator>
+      <navigator class='cell'  hover-class="navigator-hover" url="./team/team" open-type='navigate'>
+        <view class='cell_icon'>
+          <!-- <text class='icon icon-add2'></text> -->
+          <van-icon class='cell_right_icon' style='font-size: 24px;color: #FF6DAF;' name="friends-o" />
+        </view>
+        <view class='cell_content'>
+          <view class='cell_title left'>我的团队</view>
+          <van-icon class='cell_right_icon right' name="arrow" />
+          <view class='cell_text right'>{{team_count}}人</view>
+        </view>
+      </navigator>
+      <navigator class='cell'  hover-class="navigator-hover" url="./ewm/ewm" open-type='navigate'>
+        <view class='cell_icon'>
+          <van-icon class='cell_right_icon' style='font-size: 24px;color: #17CFBD;' name="qr" />
+        </view>
+        <view class='cell_content'>
+          <view class='cell_title left'>小程序推广码</view>
+          <van-icon class='cell_right_icon right' name="arrow" />
+        </view>
+      </navigator>
+    </view>
+    <view class='tranparent_space'></view>
+  </scroll-view>
+<!-- </view> -->

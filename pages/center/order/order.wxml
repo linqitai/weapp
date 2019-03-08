@@ -1,0 +1,26 @@
+<view style="height:{{windowHeight}}px;" class='order_container container'>
+    <scroll-view class="list" lower-threshold="200" scroll-y="true" bindscrolltolower="scrollToBottom" bindscroll="scroll" wx:if="{{list.length}}">
+      <view class='item' wx:for="{{list}}" wx:key="{{index}}">
+        <view class='item_left'>
+          <view class='name color_text2 f-34 margT'>{{item.user.nickName}}</view>
+          <view class="time color_text_l f-30">下单时间：{{item.create_time}}</view>
+        </view>
+        <view class='item_right'>
+          <view class='money dec_color'>
+            <text class='f-42'>{{item.total_price}}</text><text class='f-30'>元</text>
+          </view>
+        </view>
+      </view>
+      <!-- 底线 -->
+      <view class="title-footer p-r" wx:if="{{!isLastPage}}">
+        <text class="f-24 col-9 cont">数据加载完毕</text>
+      </view>
+    </scroll-view>
+    <view wx:else>
+      <view class="yoshop-notcont">
+        <text class="iconfont icon-null icon"></text>
+        <text class="cont">亲，您还没有团队</text>
+      </view>
+    </view>
+    
+</view>

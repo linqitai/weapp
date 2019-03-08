@@ -1,0 +1,108 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"uglifyFileName": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.1",
+	"appid": "wx4d0a8097d064cb21",
+	"projectname": "distribution_system",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"scripts": {
+		"beforeCompile": "sass-to-wxss",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "推广中心",
+					"pathName": "pages/center/center"
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/shopcart/shopcart"
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/person/person"
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index"
+				},
+				{
+					"id": -1,
+					"name": "订单确认",
+					"pathName": "pages/flow/checkout"
+				},
+        {
+          "id": -1,
+          "name": "我的团队",
+          "pathName": "pages/center/team/team"
+        },
+        {
+          "id": -1,
+          "name": "分销订单",
+          "pathName": "pages/center/order/order"
+        },
+        {
+          "id": -1,
+          "name": "佣金提现",
+          "pathName": "pages/center/getMoney/getMoney"
+        },
+        {
+          "id": -1,
+          "name": "申请提现",
+          "pathName": "pages/center/apply/apply"
+        },
+        {
+          "id": -1,
+          "name": "小程序推广码",
+          "pathName": "pages/center/ewm/ewm"
+        },
+        {
+          "id": -1,
+          "name": "提现明细",
+          "pathName": "pages/center/getMoneyDetail/getMoneyDetail"
+        },
+        {
+          "id": -1,
+          "name": "绑定信息",
+          "pathName": "pages/center/bind/bind"
+        }
+			]
+		}
+	}
+}

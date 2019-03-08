@@ -1,0 +1,167 @@
+/**index.wxss**/
+.center_container{
+  padding: 0px 24rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #F6F6F6;
+}
+.header{
+  padding: 0px 24rpx;
+  background-color: white;
+}
+.personInfoBox{
+  clear: both;
+  width: 100%;
+  padding-bottom: 28rpx;
+  border-bottom: 1rpx solid #efefef;
+  box-sizing: border-box;
+  display: flex;
+}
+.personInfoBox .leftInfo{
+  flex: 0 0 180rpx;
+  /* float: left; */
+  padding-top: 32rpx;
+}
+.personInfoBox .leftInfo .image{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 100%;
+  display: block;
+}
+.personInfoBox .rightInfo{
+  flex: auto;
+  /* float: left; */
+  margin-top: 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  height: 140rpx;
+}
+.personInfoBox .rightInfo .line1,.personInfoBox .rightInfo .line2,.personInfoBox .rightInfo .line3{
+  flex: 1;
+  height: 52rpx;
+  line-height: 52rpx;
+}
+.personInfoBox .rightInfo .line1{
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #323232;
+}
+.personInfoBox .rightInfo .line2{
+  font-size: 26rpx;
+  color: #b9b9b9;
+}
+.personInfoBox .rightInfo .line3{
+  font-size: 28rpx;
+  color: #a8a8a8;
+}
+.moneyBox{
+  height: 140rpx;
+  display: flex;
+  flex-direction: row;
+}
+.moneyBox .leftMoney{
+  flex: 1;
+  padding: 20rpx 0px;
+}
+.moneyBox .leftMoney .line1{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 36rpx;
+  color: #323232;
+}
+.moneyBox .leftMoney .line2{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  color: #b9b9b9;
+}
+.moneyBox .rightMoney{
+  flex: 0 0 100px;
+  height: 140rpx;
+  line-height: 140rpx;
+}
+.moneyBox .rightMoney .getMoney{
+  float: right;
+  letter-spacing: 1rpx;
+  color: #646464;
+}
+.moneyRecordBox{
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 24rpx 28rpx;
+}
+.moneyRecordBox .leftRecord{
+  flex: 1;
+}
+.moneyRecordBox .leftRecord .line1,.moneyRecordBox .leftRecord .line2{
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.moneyRecordBox .leftRecord .line1{
+  color: #323232;
+  font-size: 32rpx;
+}
+.moneyRecordBox .leftRecord .line2{
+  color: #a8a8a8;
+  font-size: 28rpx;
+}
+.moneyRecordBox .rightRecord{
+  flex: 1;
+}
+.moneyRecordBox .rightRecord .line1,.moneyRecordBox .rightRecord .line2{
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.moneyRecordBox .rightRecord .line1{
+  color: #323232;
+  font-size: 32rpx;
+}
+.moneyRecordBox .rightRecord .line2{
+  color: #a8a8a8;
+  font-size: 28rpx;
+}
+
+.cell_group{
+  overflow: hidden;
+  background-color: white;
+}
+.cell_group .cell{
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 28rpx;
+}
+.cell_group .cell .cell_icon{
+  flex: 0 0 72rpx;
+  padding-top: 6rpx;
+}
+.cell_group .cell .cell_icon .icon_style{
+  font-size: 48rpx;
+  color: #FF9D42;
+}
+.cell_group .cell .cell_content{
+  flex: auto;
+  border-bottom: 1rpx solid #efefef;
+}
+.cell_group .cell:last-child .cell_content{
+  border-bottom: 1rpx solid transparent;
+}
+.cell_group .cell .cell_content .cell_right_icon{
+  color: #a8a8a8;
+  margin-top: 7rpx;
+  margin-left: 12rpx;
+}
+.cell_group .cell .cell_content .cell_text{
+  font-size: 28rpx;
+  color: #b9b9b9;
+}
+.cell_group .cell .cell_content .cell_title{
+  font-size: 30rpx;
+  color: #323232;
+}

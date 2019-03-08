@@ -1,0 +1,38 @@
+<view class='ewm_container letter_spacing'>
+  <view class='line1'>
+    <image src='{{avatarUrl}}'></image>
+    <view class='name color_text'>{{nickName}}</view>
+  </view>
+  <view class='line2'>
+    <view class='maintext'>
+      <view>
+        <text class='dec_color f-bold'>分享</text><text>二维码</text>
+      </view>
+      <view class='tranparent_space'></view>
+      <view>
+        <text>下级购买有</text><text class='dec_color f-bold'>佣金</text>
+      </view>
+    </view>
+    <view class='circles'>
+      <view class='circle_left'></view>
+      <view class='item'><text class='circle'></text></view>
+      <view class='item'><text class='circle'></text></view>
+      <view class='item'><text class='circle'></text></view>
+      <view class='item'><text class='circle'></text></view>
+      <view class='item'><text class='circle'></text></view>
+      <view class='item'><text class='circle'></text></view>
+      <view class='item'><text class='circle'></text></view>
+      <view class='item'><text class='circle'></text></view>
+      <view class='item'><text class='circle'></text></view>
+      <view class='item'><text class='circle'></text></view>
+      <view class='circle_right'></view>
+    </view>
+    <view class='tip'>
+      <view class='f-32'>长按点击识别二维码</view>
+      <view class='f-32' style='margin-top:18rpx;'>进入商城</view>
+    </view>
+  </view>
+  <view class='line3'>
+    <image src='{{image}}'></image>
+  </view>
+</view>

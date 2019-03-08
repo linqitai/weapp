@@ -1,0 +1,88 @@
+/**index.wxss**/
+.ewm_container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+} 
+.line1{
+  flex: 1;
+}
+.line1 image{
+  margin-top: 60rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100%;
+  background-color: yellow;
+}
+.line1 .name{
+  margin-top: 14rpx;
+  font-size: 34rpx;
+}
+.line2{
+  flex: 1;
+}
+.maintext{
+  font-size:46rpx;
+}
+.circles{
+  display: flex;
+  flex-direction: row;
+  margin-top: 50rpx;
+  padding: 0 70rpx;
+  position: relative;
+}
+.circle_left{
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #efefef;
+  border-radius: 100%;
+  box-shadow:0px 4rpx 20rpx #c7c7c7 inset;
+  display: block;
+  position: absolute;
+  left:-40rpx;
+  top: -40rpx;
+}
+.circle_right{
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #efefef;
+  border-radius: 100%;
+  box-shadow:0px 4rpx 20rpx #c7c7c7 inset;
+  display: block;
+  position: absolute;
+  right:-40rpx;
+  top: -40rpx;
+}
+.circles .item{
+  flex: 1;
+  text-align: center;
+}
+.circles .item .circle{
+  width: 16rpx;
+  height: 16rpx;
+  background-color: #efefef;
+  border-radius: 100%;
+  box-shadow:0px 1rpx 4rpx #c7c7c7 inset;
+  display: block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.tip{
+  margin-top: 50rpx;
+  color: #646464;
+}
+.line3{
+  flex: 1;
+  text-align: center;
+}
+.line3 image{
+  width: 300rpx;
+  height: 300rpx;
+  background-color: yellow;
+}

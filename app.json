@@ -1,0 +1,70 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/center/team/team",
+    "pages/center/center",
+    "pages/center/order/order",
+    "pages/center/getMoney/getMoney",
+    "pages/center/apply/apply",
+    "pages/center/bind/bind",
+    "pages/center/getMoneyDetail/getMoneyDetail",
+    "pages/center/ewm/ewm",
+    "pages/shopcart/shopcart",
+    "pages/person/person",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/goodsdetail/goodsdetail",
+    "pages/flow/checkout",
+    "pages/address/index",
+    "pages/address/create",
+    "pages/address/detail",
+    "pages/address/position/position",
+    "pages/address/position/sureAddress",
+    "pages/order/index",
+    "pages/order/detail"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "开启地图定位功能后可方便您选择自己的地址"
+    }
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#fd4a5f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "推广中心",
+        "iconPath": "images/cate.png",
+        "selectedIconPath": "images/cate-active.png"
+      },
+      {
+        "pagePath": "pages/shopcart/shopcart",
+        "text": "购物车",
+        "iconPath": "images/flow.png",
+        "selectedIconPath": "images/flow-active.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user-active.png"
+      }
+    ],
+    "position": "bottom"
+  }
+}

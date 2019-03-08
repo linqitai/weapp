@@ -1,0 +1,54 @@
+<!-- <view class='center_container'> -->
+  <scroll-view class='center_container' scroll-y>
+    <view class='tranparent_space'></view>
+    <view class='header box_border_radius'>
+      <view class='line1'>
+        <text class='text color_text2'>可提现佣金</text>
+        <van-button class='detail_btn' type="default" size="small" bind:click="toDetaiView">提现明细</van-button>
+      </view>
+      <view class='line2'>
+        <text class='text_digit'>0</text>
+        <text class='text'>积分</text>
+      </view>
+    </view>
+    <view class='cell_group box_border_radius box_margin_top'>
+      <view class='cell'>
+        <view class='cell_left color_text2'>
+          全部佣金
+        </view>
+        <view class='cell_right'>
+          <view style='text-align:right'>
+            <text class='text_digit'>0</text>
+            <text class='text'>积分</text>
+          </view>
+        </view>
+      </view>
+      <view class='cell'>
+        <view class='cell_left color_text2'>
+          待打款佣金
+        </view>
+        <view class='cell_right'>
+          <view style='text-align:right'>
+            <text class='text_digit'>0</text>
+            <text class='text'>积分</text>
+          </view>
+        </view>
+      </view>
+      <view class='cell'>
+        <view class='cell_left color_text2'>
+          已提现佣金
+        </view>
+        <view class='cell_right'>
+          <view style='text-align:right'>
+            <text class='text_digit'>0</text>
+            <text class='text'>积分</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='tranparent_space'></view>
+    <view class='tranparent_space'></view>
+    <van-button round="true" size="large" type="info" bind:click="toApplyView">我要提现</van-button>
+    <view class='tranparent_space'></view>
+  </scroll-view>
+<!-- </view> -->

@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="shopcart_container">
+  <scroll-view
+    scroll-y
+    class='scroll'
+  >
+    <block wx:if="{{goods_list.length}}">
+      <view class='shopcart_item box_border_radius box_margin_top' wx:for="{{goods_list}}" wx:key="index">
+        <view class='item_left'>
+          <radio checked="{{is_select_arr[index]}}" data-index='{{index}}' color="#FF6000" bindtap='click_radio_event'/>
+        </view>
+        <view class='item_center'>
+          <image class='image' src="{{item.image[0].file_path}}" mode='aspectFit'></image>
+        </view>
+        <view class='item_right'>
+          <view class='item_right_line1'>{{item.goods_name}}</view>
+          <view class='item_right_line2'>
+            <view class='line2_box'>
+              {{item.goods_sku.goods_attr}}
+              <!-- <van-icon class='cell_right_icon arrow_down' name="arrow-down" /> -->
+            </view>
+          </view>
+          <view class='item_right_line3'>
+            <view class='line3_left'>￥{{item.goods_sku.goods_price}}</view>
+            <view class='line3_right'>
+              <view class='add' bindtap='addCount' data-index='{{index}}' data-sku-id="{{item.goods_sku_id}}"><text class='icon icon-add2'></text></view>
+              <input class='input_number' type="number" confirm-type="done" value="{{item.total_num}}"/>
+              <view class='sub' bindtap="minusCount" data-index='{{index}}' data-goods-id="{{item.goods_id}}" data-sku-id="{{item.goods_sku_id}}"><text class='icon icon-sub'></text></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view wx:else>
+      <view class="yoshop-notcont">
+        <text class="icon icon-null iconfont"></text>
+        <text class="cont">亲，购物车还没有商品哦</text>
+        <view bindtap="goShopping" class="flow-btn-min">去购物</view>
+      </view>
+    </view>
+  </scroll-view>
+  <van-submit-bar
+    wx:if="{{goods_list.length}}"
+    price="{{ total_price }}"
+    button-text="结算"
+    bind:submit="submit"
+    button-class="submit_style"
+    disabled="{{submit_disable}}"
+  >
+  <van-tag type="primary">
+    <radio style='margin-left:10px;' checked="{{is_select_all}}" color="#FF6000" bindtap='is_select_all_change'/>
+  </van-tag>
+  </van-submit-bar>
+</view>

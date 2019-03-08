@@ -1,0 +1,29 @@
+.order_container{
+  padding: 0 28rpx;
+  background-color: white;
+}
+.list{
+  height: 100%;
+}
+.list .item{
+  display: flex;
+  padding: 28rpx 0;
+  border-bottom: 1rpx solid #efefef;
+}
+.list .item .item_left{
+  flex: auto;
+}
+.list .item .item_left .time{
+  margin-top: 12rpx;
+}
+.list .item .item_right{
+  flex: 0 0 180rpx;
+}
+.list .item .item_right .money{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: right;
+}
+.list .item:last-child{
+  border-bottom: 1rpx solid transparent;
+}
