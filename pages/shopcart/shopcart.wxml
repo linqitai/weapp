@@ -9,11 +9,11 @@
         <view class='item_left'>
           <radio checked="{{is_select_arr[index]}}" data-index='{{index}}' color="#FF6000" bindtap='click_radio_event'/>
         </view>
-        <view class='item_center'>
+        <navigator hover-class="navigator-hover" url="../goodsdetail/goodsdetail?goods_id={{item.goods_id}}" open-type='navigate' class='item_center' >
           <image class='image' src="{{item.image[0].file_path}}" mode='aspectFit'></image>
-        </view>
+        </navigator>
         <view class='item_right'>
-          <view class='item_right_line1'>{{item.goods_name}}</view>
+          <navigator hover-class="navigator-hover" url="../goodsdetail/goodsdetail?goods_id={{item.goods_id}}" open-type='navigate' class='item_right_line1'>{{item.goods_name}}</navigator>
           <view class='item_right_line2'>
             <view class='line2_box'>
               {{item.goods_sku.goods_attr}}

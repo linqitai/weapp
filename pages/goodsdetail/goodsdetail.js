@@ -83,11 +83,8 @@ Page({
     // 商品价格/划线价/库存
     data.goods_sku_id = data.detail.spec[0].spec_sku_id;
     data.goods_price = data.detail.spec[0].goods_price;
-    data.single_money = data.specData.spec_attr[0].spec_items[0].single_money
-    data.single_unit = data.detail.spec[0].single_unit;
     data.line_price = data.detail.spec[0].line_price;
     data.stock_num = data.detail.spec[0].stock_num;
-    data.unit = data.detail.spec[0].unit;
     // 初始化商品多规格
     if (data.detail.spec_type === 20) {
       data.specData = _this.initManySpecData(data.specData);
@@ -207,6 +204,10 @@ Page({
    * 增加商品数量
    */
   up: function () {
+    if (this.data.goods_num == this.data.stock_num) {
+      App.toast("购买数量不能大于库存",2000)
+      return;
+    }
     this.setData({
       goods_num: ++this.data.goods_num
     })

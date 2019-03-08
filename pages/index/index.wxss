@@ -73,29 +73,3 @@
 .box2{
   background-color: #F6F6F6;
 }
-.goods_list{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content:space-between;
-}
-.goods_list .item{
-  flex: 0 0 45%;
-  background-color: white;
-  padding: 14rpx;
-  margin-bottom: 14rpx;
-  border-radius: 12rpx;
-}
-.goods_list .item .goods_img{
-  width: 100%;
-  height: 340rpx;
-  /* background-color: #3B6BD7; */
-}
-.goods_list .item .title{
-  color: #323232;
-  font-size: 32rpx;
-}
-.goods_list .item .buy{
-  font-size: 32rpx;
-  margin-top: 10rpx;
-}

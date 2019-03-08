@@ -1,7 +1,7 @@
 <view class="checkout_container">
   <!-- 配送地址 -->
   <view>
-    <view wx:if="{{address.address_id}}">
+    <view wx:if="{{exist_address}}">
       <view class="b-f">
         <view class="flow-checkout-header" bindtap='toGetAddress'>
           <text class="iconfont icon icon-dingwei"></text>
@@ -20,14 +20,18 @@
       </view>
     </view>
     <view wx:else>
-      <view class="flow-checkout-header" bindtap='toJoin'>
-        <text class="iconfont icon-dingwei1"></text>
-        <view class="flow-header-left">
-          <view class="f-28 col-6">去认证成为商户
+      <view class="b-f">
+        <view class="flow-checkout-header" bindtap='toGetAddress'>
+          <text class="iconfont icon icon-dingwei"></text>
+          <view class="flow-header-left">
+            <view class="flow-checkout-admin f-30 col-3">
+              您还没添加地址
+            </view>
+            <view class="flow-checkout-address">
+              请点击此处添加
+            </view>
           </view>
-        </view>
-        <view class="flow-header-right p-r15">
-          <text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
+          <text class="iconfont icon icon-right_arrow address_arrow"></text>
         </view>
       </view>
     </view>
@@ -59,8 +63,8 @@
   </view>
   <view class="flow-all-money b-f padding-box m-top20">
     <view class="dis-flex flow-all-list">
-      <text style="flex:auto">我的积分:100</text>
-      <view style="flex:0 0 170rpx;">
+      <text style="flex:auto">我的积分:{{my_intergal}}</text>
+      <view style="flex:0 0 180rpx; text-align:right">
         <van-checkbox
           label-position="left"
           shape="square"
@@ -70,6 +74,12 @@
         >
           积分抵扣
         </van-checkbox>
+      </view>
+    </view>
+    <view class="dis-flex flow-all-list">
+      <text style="flex:auto">我的余额:</text>
+      <view class='col-m' style="flex:0 0 180rpx; text-align:right">
+        {{my_money}}元
       </view>
     </view>
   </view>
@@ -90,13 +100,13 @@
     <view class="dis-flex flow-all-list">
       <text class="flex-five">运费:</text>
       <view class="flex-five t-r">
-        <text class="col-m">+ ￥0</text>
+        <text class="col-m">+ ￥0.00</text>
       </view>
     </view>
     <view class="dis-flex flow-all-list">
       <text class="flex-five">立减:</text>
       <view class="flex-five t-r">
-        <text class="col-m">- ￥5.0</text>
+        <text class="col-m">- ￥0.00</text>
       </view>
     </view>
   </view>

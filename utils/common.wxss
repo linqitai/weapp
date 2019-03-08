@@ -172,11 +172,11 @@ page {
 }
 
 .col-m {
-  color: #ff495e !important;
+  color: #FF6000!important;
 }
 
 .col-s {
-  color: #be0117 !important;
+  color: #FF6000 !important;
 }
 
 .cont-box {

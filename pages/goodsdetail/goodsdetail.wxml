@@ -21,7 +21,8 @@
         <!-- <text class="num">￥{{goods_price}}</text> -->
         ￥<text class="num">{{goods_price}}</text>
         <text class='tag dec_color'>限时抢购</text>
-        <text class="del">￥{{line_price}}</text>
+        <text class="del" wx:if="{{line_price!='0.00'}}">￥{{line_price}}</text>
+        <text class='stock_num right'>库存：{{stock_num}}</text>
       </view>
       <view class="goods-sales-box f-24 dis-flex">
         <!-- <text class="flex-box num" style='margin-left:2px;'>库存：{{stock_num}}</text> -->
@@ -117,7 +118,7 @@
       </view>
       <block wx:if="{{stock_num > 0}}">
         <view bindtap="submit" class="order-number" data-type="addCart">加入购物车</view>
-        <view bindtap="submit" class="order-bt" data-type="buyNow"> 立即购买</view>
+        <view bindtap="submit" class="order_submit" data-type="buyNow"> 立即购买</view>
       </block>
       <view class="default-btn" style="wdata-typeth:100%" wx:else>暂无现货</view>
     </view>
@@ -126,5 +127,5 @@
 
 <!-- 返回顶部 -->
 <view bindtap="goTop" class="widget-goTop" wx:if="{{floorstatus}}">
-  <text class="iconfont icon-fanhuidingbu"></text>
+  <text class="iconfont icon icon-up"></text>
 </view>

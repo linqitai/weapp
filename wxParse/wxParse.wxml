@@ -9,20 +9,20 @@
                     <view class="{{item.classStr}} wxParse-li-circle"></view>
                 </view>
                 <view class="{{item.classStr}} wxParse-li-text">
-                    <template is="wxParse12" data="{{item:item}}" wx:for="{{item.nodes}}"></template>
+                    <template is="wxParse12" data="{{item:item}}" wx:key="{{index}}" wx:for="{{item.nodes}}"></template>
                 </view>
             </view>
         </view>
         <template is="wxParseVideo" data="{{item:item}}" wx:elif="{{item.tag=='video'}}"></template>
         <template is="wxParseImg" data="{{item:item}}" wx:elif="{{item.tag=='img'}}"></template>
         <view bindtap="wxParseTagATap" class="wxParse-inline {{item.classStr}} wxParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}" wx:elif="{{item.tag=='a'}}">
-            <template is="wxParse12" data="{{item:item}}" wx:for="{{item.nodes}}"></template>
+            <template is="wxParse12" data="{{item:item}}" wx:for="{{item.nodes}}" wx:key="{{index}}"></template>
         </view>
         <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}" wx:elif="{{item.tagType=='block'}}">
-            <template is="wxParse12" data="{{item:item}}" wx:for="{{item.nodes}}"></template>
+            <template is="wxParse12" data="{{item:item}}" wx:for="{{item.nodes}}" wx:key="{{index}}"></template>
         </view>
         <view class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}" wx:else>
-            <template is="wxParse12" data="{{item:item}}" wx:for="{{item.nodes}}"></template>
+            <template is="wxParse12" data="{{item:item}}" wx:for="{{item.nodes}}" wx:key="{{index}}"></template>
         </view>
     </block>
     <template is="WxEmojiView" data="{{item:item}}" wx:elif="{{item.node=='text'}}"></template>
@@ -320,7 +320,7 @@
 <template name="wxParse0">
     <block wx:if="{{item.node=='element'}}">
         <button size="mini" type="default" wx:if="{{item.tag=='button'}}">
-            <template is="wxParse1" data="{{item:item}}" wx:for="{{item.nodes}}"></template>
+            <template is="wxParse1" data="{{item:item}}" wx:for="{{item.nodes}}" wx:key="{{index}}"></template>
         </button>
         <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}" wx:elif="{{item.tag=='li'}}">
             <view class="{{item.classStr}} wxParse-li-inner">
@@ -328,23 +328,23 @@
                     <view class="{{item.classStr}} wxParse-li-circle"></view>
                 </view>
                 <view class="{{item.classStr}} wxParse-li-text">
-                    <template is="wxParse1" data="{{item:item}}" wx:for="{{item.nodes}}"></template>
+                    <template is="wxParse1" data="{{item:item}}" wx:key="{{index}}" wx:for="{{item.nodes}}"></template>
                 </view>
             </view>
         </view>
         <template is="wxParseVideo" data="{{item:item}}" wx:elif="{{item.tag=='video'}}"></template>
         <template is="wxParseImg" data="{{item:item}}" wx:elif="{{item.tag=='img'}}"></template>
         <view bindtap="wxParseTagATap" class="wxParse-inline {{item.classStr}} wxParse-{{item.tag}}" data-c="{{item.attr.href}}" style="{{item.styleStr}}" wx:elif="{{item.tag=='a'}}">
-            <template is="wxParse1" data="{{item:item}}" wx:for="{{item.nodes}}"></template>
+            <template is="wxParse1" data="{{item:item}}" wx:for="{{item.nodes}}" wx:key="{{index}}"></template>
         </view>
         <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}" wx:elif="{{item.tag=='table'}}">
-            <template is="wxParse1" data="{{item:item}}" wx:for="{{item.nodes}}"></template>
+            <template is="wxParse1" data="{{item:item}}" wx:for="{{item.nodes}}" wx:key="{{index}}"></template>
         </view>
         <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}" wx:elif="{{item.tagType=='block'}}">
-            <template is="wxParse1" data="{{item:item}}" wx:for="{{item.nodes}}"></template>
+            <template is="wxParse1" data="{{item:item}}" wx:for="{{item.nodes}}" wx:key="{{index}}"></template>
         </view>
         <view class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}" wx:else>
-            <template is="wxParse1" data="{{item:item}}" wx:for="{{item.nodes}}"></template>
+            <template is="wxParse1" data="{{item:item}}" wx:for="{{item.nodes}}" wx:key="{{index}}"></template>
         </view>
     </block>
     <template is="WxEmojiView" data="{{item:item}}" wx:elif="{{item.node=='text'}}"></template>
@@ -354,7 +354,7 @@
 </template>
 <template name="WxEmojiView">
     <view class="WxEmojiView wxParse-inline" style="{{item.styleStr}}">
-        <block wx:for="{{item.textArray}}">
+        <block wx:for="{{item.textArray}}" wx:key="{{index}}">
             <block wx:if="{{item.node=='text'}}">{{item.text}}</block>
             <image class="wxEmoji" src="{{item.baseSrc}}{{item.text}}" wx:elif="{{item.node=='element'}}"></image>
         </block>

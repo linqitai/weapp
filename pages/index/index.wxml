@@ -2,9 +2,9 @@
 <scroll-view class="home_container" scroll-y>
   <view class='box1 wing_blank'>
     <!-- <view class='tranparent_space'></view> -->
-    <view class='search_box box_border_radius'>
+    <navigator hover-class="none" openType="navigate" url="../search/index" class='search_box box_border_radius'>
       <view class='text'>男鞋 <text class='icon icon-search'></text> </view>
-    </view>
+    </navigator>
     <!-- <include src="components/search/search.wxml" /> -->
     <view class='tranparent_space'></view>
     <!-- <swiper

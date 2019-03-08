@@ -67,7 +67,7 @@
 }
 
 .goods-fixed-icon .s_cont {
-  color: #ff495e;
+  color: #0D8BFF;
 }
 
 .goods-title {
@@ -116,7 +116,7 @@
 
 /* 
 .goods-property-box .m-l {
-  color: #ff495e;
+  color: #0D8BFF;
   font-size: 30rpx;
 } */
 
@@ -179,9 +179,9 @@
 }
 
 .cartypeitem.cur {
-  background: #ff495e;
+  background: #0D8BFF;
   color: #fff;
-  border: 1rpx solid #ff495e;
+  border: 1rpx solid #0D8BFF;
 }
 
 .cartypeitem.cur:after {
@@ -223,7 +223,7 @@
 
 .order-number {
   width: 50%;
-  background-color: #f4a213;
+  background-color: #0D8BFF;
   color: #fff;
   text-align: center;
   line-height: 46px;
@@ -285,7 +285,7 @@
 }
 
 .flow_num {
-  background: #ff495e;
+  background: #0D8BFF;
   position: absolute;
   right: 20rpx;
   top: 10rpx;
@@ -327,8 +327,8 @@
 }
 
 #top-nav-bar-true text {
-  border: 1rpx #ff495e solid;
-  color: #ff495e;
+  border: 1rpx #0D8BFF solid;
+  color: #0D8BFF;
 }
 
 #top-nav-bar-0 span {
@@ -337,4 +337,10 @@
 
 .goods-fixed-icon contact-button {
   display: block;
+}
+
+.stock_num{
+  color: #c7c7c7;
+  font-size: 26rpx;
+  margin-top: 20rpx;
 }

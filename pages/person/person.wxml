@@ -4,18 +4,18 @@
   <view class='header box_border_radius'>
     <view class='personInfoBox'>
       <view class='leftInfo'>
-        <image class='image'></image>
+        <image class='image' src="{{userInfo.avatarUrl}}" mode='aspectFit'></image>
       </view>
       <view class='rightInfo'>
         <view class='line1'>
           <view class='left'>{{userInfo.nickName?userInfo.nickName:'---------'}}</view>
-          <view class='right'>
+          <!-- <view class='right'>
             <van-icon class='cell_right_icon right' name="arrow"/>
             <view class='line1_edit right'>修改</view>
-          </view>
+          </view> -->
         </view>
-        <view class='line2'>[普通会员]</view>
-        <view class='line3'>推荐人：李木子</view>
+        <view class='line2'>[{{userInfo.position.name}}]</view>
+        <view class='line3'>推荐人：{{userInfo.parent_name?userInfo.parent_name:'无'}}</view>
       </view>
     </view>
     <view class='moneyBox'>

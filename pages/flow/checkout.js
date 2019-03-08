@@ -76,8 +76,15 @@ Page({
     let _this = this;
     wx.setStorageSync('_from', 'flow');// 记得在我的页面要清空
     console.log(wx.getStorageSync('_from'), "wx.getStorageSync('_from')")
+    let url = ''
+    if (_this.data.exist_address){
+      url = '../address/index?from=flow'
+    }else{
+      url = '../address/create'
+      wx.setStorageSync('operate', 'add')
+    }
     wx.navigateTo({
-      url: '../address/' + (_this.data.exist_address ? 'index?from=flow' : 'create')
+      url: url
     });
   },
   scrollToBottom() {
@@ -222,20 +229,6 @@ Page({
     // 获取订单信息回调方法
     let callback = function(result) {
       wx.hideLoading()
-      // let pay_type_arr = result.data.pay_type;
-      // _this.setData({
-      //   pay_type_arr
-      // })
-      // console.log(pay_type_arr,"get------pay_type_arr")
-      // let time_list = result.data.time_list;
-      // _this.setData({
-      //   time_list
-      // })
-      // console.log(pay_type_arr, "pay_type_arr")
-      // console.log(time_list, "time_list")
-      // _this.init_get_time_list(time_list)
-      // _this.init_post_pay_type(pay_type_arr)
-      // console.log(result.data,"result.data获取订单信息回调方法")
       if (result.code !== 1) {
         console.log(result.msg,"result.msg")
         App.showError(result.msg);
@@ -248,6 +241,10 @@ Page({
         App.showError(_this.data.error);
       }
       _this.setData(result.data);
+      _this.setData({
+        my_intergal: parseInt(result.data.my_intergal),
+        my_money: parseFloat(result.data.my_money)
+      });
       if(result.data.address){
         _this.setData({
           exist_address:true

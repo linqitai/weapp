@@ -124,7 +124,7 @@ picker-view-column view {
   margin-top: 20rpx;
 }
 .profile-btn button {
-  background: #ff495e;
+  background-color: #0D8BFF;
   color: white;
 }
 

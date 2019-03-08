@@ -12,6 +12,9 @@ Page({
     })
   },
   onLoad: function () {
+    
+  },
+  onShow(){
     // 获取当前用户信息
     this.getUserDetail();
   },

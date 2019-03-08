@@ -100,7 +100,13 @@ Page({
   },
   judge_submit_isdisable(){
     let _this = this;
-    if (_this.data.is_select_all) {
+    let hasRadioSelect = false;
+    for (let i in is_select_arr) {
+      if (is_select_arr[i] == true) {
+        hasRadioSelect = true
+      }
+    }
+    if (hasRadioSelect) {
       _this.setData({
         submit_disable: false
       })
@@ -244,10 +250,14 @@ Page({
    */
   submit: function (t) {
     wx.setStorageSync('order_type', 'cart')
-    let key = []
+    let key = ""
     for(let i in is_select_arr) {
       if (is_select_arr[i]) {
-        key.push(i)
+        if(key.length==0){
+          key += parseInt(i)
+        }else{
+          key += ',' + parseInt(i)
+        }
       }
     }
     console.log(key,"key")

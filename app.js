@@ -120,11 +120,11 @@ App({
   /**
    * 显示失败提示框
    */
-  toast: function (msg) {
+  toast: function (msg,number) {
     wx.showToast({
       title: msg,
       icon: 'none',
-      duration: 700
+      duration: number
     })
   },
   /**

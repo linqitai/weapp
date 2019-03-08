@@ -10,6 +10,7 @@
 } 
 .theme_color{color: #0D8BFF;}
 .dec_color{color:#FF6000;}
+.bg_color{background-color: #F6F6F6;}
 
 .color_text{color: #323232;}
 .color_text2{color: #8b8b8b;}
@@ -130,10 +131,35 @@
   color:#48C23D
 }
 .flagFalse{
-  color:#FF495E
+  color:#FF6000
 }
 
-
+.goods_list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.goods_list .item{
+  flex: 0 0 45%;
+  background-color: white;
+  padding: 14rpx;
+  margin-bottom: 14rpx;
+  border-radius: 12rpx;
+}
+.goods_list .item .goods_img{
+  width: 100%;
+  height: 340rpx;
+  /* background-color: #3B6BD7; */
+}
+.goods_list .item .title{
+  color: #323232;
+  font-size: 32rpx;
+}
+.goods_list .item .buy{
+  font-size: 32rpx;
+  margin-top: 10rpx;
+}
 
 .yoshop-notcont {
   margin: 130rpx 100rpx;
@@ -285,7 +311,7 @@
 
 .button-common button[disabled]:not([type]) {
   color: #fff;
-  background-color: #ff495e;
+  background-color: #FF6000;
 }
 
 .button-common button::after {
@@ -315,7 +341,7 @@
 }
 
 .commont-fixed-footer .li.active {
-  color: #ff495e;
+  color: #FF6000;
 }
 
 .commont-fixed-footer .li image {
@@ -358,7 +384,7 @@
 }
 
 .bargain-mol .footer {
-  background: #ff495e;
+  background: #FF6000;
   padding: 26rpx 0;
   color: #fff;
 }
@@ -435,15 +461,14 @@
   width: 76rpx;
   height: 76rpx;
   border-radius: 76rpx;
-  border: 1rpx solid #eee;
 }
 
-.widget-goTop .icon-fanhuidingbu {
-  color: #666;
+.widget-goTop .icon-up {
+  color: #c7c7c7;
   display: block;
   text-align: center;
   line-height: 76rpx;
-  font-size: 32rpx;
+  font-size: 76rpx;
 }
 
 .filter-menu {
@@ -457,7 +482,7 @@
   width: 76rpx;
   height: 76rpx;
   border-radius: 100%;
-  background: #ff495e;
+  background: #FF6000;
   opacity: 0.8;
   position: absolute;
   right: 0;
@@ -557,7 +582,7 @@
   border-radius: 100%;
   margin: 150rpx auto 0;
   animation-fill-mode: both;
-  border: 2px solid #ff495e;
+  border: 2px solid #FF6000;
   border-bottom-color: transparent;
   height: 25px;
   width: 25px;
@@ -694,7 +719,15 @@
 
 .order-bt {
   width: 50%;
-  background-color: #ff495e;
+  background-color: #0D8BFF;
+  color: #fff;
+  text-align: center;
+  line-height: 46px;
+}
+
+.order_submit {
+  width: 50%;
+  background-color: #FF6000;
   color: #fff;
   text-align: center;
   line-height: 46px;
@@ -714,10 +747,10 @@
 .goods_comment_box .comment_btn text {
   display: block;
   padding: 5rpx 0;
-  color: #ff495e;
+  color: #FF6000;
   font-size: 26rpx;
   text-align: center;
-  border: 1px solid #ff495e;
+  border: 1px solid #FF6000;
   border-radius: 30rpx;
 }
 
@@ -826,7 +859,7 @@
 
 .flow-shopList .flow-list-right .flow-cont {
   font-size: 30rpx;
-  color: #ff495e;
+  color: #FF6000;
 }
 
 .flow-shopList .flow-list-right .small {
@@ -901,7 +934,7 @@
   display: block;
 }
 .flow-btn {
-  background-color: #ff495e;
+  background-color: #FF6000;
   color: #fff;
   text-align: center;
   line-height: 46px;
@@ -915,7 +948,7 @@
 }
 
 .flow-list .header .icon-dianpu2 {
-  color: #ff495e;
+  color: #FF6000;
   padding-left: 20rpx;
   font-size: 32rpx;
 }
@@ -980,7 +1013,7 @@
 }
 
 .profile-btn button {
-  background: #ff495e;
+  background: #0D8BFF;
   color: white;
   margin-bottom: 20rpx;
 }
@@ -1130,13 +1163,8 @@
   color: #333;
 }
 
-.profile-btn button {
-  background: #ff495e;
-  color: white;
-}
-
 .profile-btn button[disabled] {
-  background: #f16474;
+  background: rgb(86, 135, 180);
   color: white;
 }
 

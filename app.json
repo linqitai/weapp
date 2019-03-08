@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/search/index",
+    "pages/category/list",
     "pages/center/team/team",
     "pages/center/center",
     "pages/center/order/order",
@@ -35,8 +37,8 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
-    "color": "#6e6d6b",
-    "selectedColor": "#fd4a5f",
+    "color": "#323232",
+    "selectedColor": "#0D8BFF",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
@@ -44,25 +46,25 @@
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "images/home.png",
-        "selectedIconPath": "images/home-active.png"
+        "selectedIconPath": "images/home-selected.png"
       },
       {
         "pagePath": "pages/center/center",
         "text": "推广中心",
-        "iconPath": "images/cate.png",
-        "selectedIconPath": "images/cate-active.png"
+        "iconPath": "images/share.png",
+        "selectedIconPath": "images/share-selected.png"
       },
       {
         "pagePath": "pages/shopcart/shopcart",
         "text": "购物车",
-        "iconPath": "images/flow.png",
-        "selectedIconPath": "images/flow-active.png"
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/cart-selected.png"
       },
       {
         "pagePath": "pages/person/person",
         "text": "我的",
-        "iconPath": "images/user.png",
-        "selectedIconPath": "images/user-active.png"
+        "iconPath": "images/person.png",
+        "selectedIconPath": "images/person-selected.png"
       }
     ],
     "position": "bottom"
