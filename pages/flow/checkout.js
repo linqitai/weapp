@@ -34,7 +34,8 @@ Page({
     page: 1,
     isLastPage: false,
     isHiddenCounpon:false,
-    integral_checked:false
+    integral_checked:false,
+    integral_status:0
   },
   /**
    * 生命周期函数--监听页面加载
@@ -543,6 +544,15 @@ Page({
       });
       return;
     }
+    if(_this.data.integral_checked){
+      _this.setData({
+        integral_status: 1
+      })
+    }else{
+      _this.setData({
+        integral_status: 0
+      })
+    }
     // 创建订单-立即购买
     if (wx.getStorageSync('order_type') === 'buyNow') {
       console.log("=============buyNow==============")
@@ -556,7 +566,8 @@ Page({
         time_type: _this.data.time_type,
         time_value: _this.data.time_value,
         time_number: _this.data.time_number,
-        key: wx.getStorageSync('key')
+        key: wx.getStorageSync('key'),
+        integral_status: _this.data.integral_status
       }, function(result) {
         // success
         console.log('===================success============================');
@@ -592,7 +603,8 @@ Page({
         time_type: _this.data.time_type,
         time_value: _this.data.time_value,
         time_number: _this.data.time_number,
-        key: wx.getStorageSync('key')
+        key: wx.getStorageSync('key'),
+        integral_status: _this.data.integral_status
       }
       console.log(prams,"prams")
       App._post_form('order/cart', prams, function(result) {

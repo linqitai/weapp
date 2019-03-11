@@ -1,0 +1,39 @@
+
+.submit:active{
+  background-color: rgb(15, 105, 189);
+}
+.line1{
+  font-size: 90rpx;
+  margin-top: 100rpx;
+  text-align: center;
+}
+.line2{
+  font-size: 36rpx;
+  margin-top: 24rpx;
+  text-align: center;
+}
+.line3{
+  font-size: 32rpx;
+  margin-top: 80rpx;
+  text-align: center;
+}
+.submit{
+  width: 400rpx !important;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-radius: 82rpx;
+  color: white;
+  font-size: 32rpx;
+  background-color: #0D8BFF;
+  margin-top: 80rpx;
+}
+.line4{
+  font-size: 36rpx;
+  text-align: center;
+  margin-top: 140rpx;
+}
+.line5{
+  font-size: 36rpx;
+  text-align: center;
+  margin-top: 30rpx;
+}

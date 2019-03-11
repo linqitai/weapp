@@ -15,6 +15,7 @@
     "pages/person/person",
     "pages/person/chongzhi/chongzhi",
     "pages/person/chongzhi/input",
+    "pages/person/chongzhi/success",
     "pages/logs/logs",
     "pages/login/login",
     "pages/goodsdetail/goodsdetail",

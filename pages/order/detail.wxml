@@ -81,21 +81,11 @@
       <view class="dis-flex flow-all-list">
         <text class="flex-five">订单详情</text>
       </view>
-      <view class="dis-flex flow-all-list-cont">
-        <text class="flex-p3 col-7">期望配送时间:</text>
-        <text class="flex-p7 col-m t-r">{{order.distribution_day.value}}{{order.distribution_time}}</text>
-      </view>
       
       <view class="dis-flex flow-all-list-cont">
         <text class="flex-five col-7">支付方式:</text>
         <text class="flex-five col-m t-r">{{order.pay_type}}</text>
       </view>
-      <!-->
-      <view class="dis-flex flow-all-list-cont">
-        <text class="flex-five col-7">支付状态：</text>
-        <text class="flex-five col-m t-r">{{order.type==2?"可支付":"等待确认"}}</text>
-      </view>
-      -->
       <view class="dis-flex flow-all-list-cont">
         <text class="flex-five col-7">商品原价:</text>
         <text class="flex-five col-m t-r">￥{{order.total_price}}</text>
@@ -106,12 +96,16 @@
         <text class="flex-five col-m t-r">+￥{{order.express_price}}</text>
       </view>
       -->
-      <view class="dis-flex flow-all-list-cont" wx:if="{{order.coupon_money!=0}}">
-        <text class="flex-five col-7">抵扣:</text>
-        <text class="flex-five col-m t-r">-￥{{order.coupon_money}}</text>
+      <view class="dis-flex flow-all-list-cont">
+        <text class="flex-five col-7">积分抵扣:</text>
+        <text class="flex-five col-m t-r">-￥{{order.integral_decution}}</text>
       </view>
       <view class="dis-flex flow-all-list-cont">
-        <text class="flex-five col-7">应付金额:</text>
+        <text class="flex-five col-7">余额抵扣:</text>
+        <text class="flex-five col-m t-r">-￥{{order.money_decution}}</text>
+      </view>
+      <view class="dis-flex flow-all-list-cont">
+        <text class="flex-five col-7">实付金额:</text>
         <text class="flex-five col-m t-r">￥{{order.pay_price}}</text>
       </view>
     </view>
