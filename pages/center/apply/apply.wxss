@@ -29,6 +29,7 @@
 }
 .cell_group .cell .cell_right{
   flex: 1;
+  font-size: 26rpx;
 }
 .cell_group .cell .cell_right .inputMoney{
   font-size: 32rpx;

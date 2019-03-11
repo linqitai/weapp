@@ -1,13 +1,13 @@
 <view style="height:{{windowHeight}}px" class='order_container'>
     <scroll-view class="list" lower-threshold="100" scroll-y="true" bindscrolltolower="scrollToBottom" bindscroll="scroll" wx:if="{{list.length}}">
-      <view class='item' wx:for="{{list}}">
+      <view class='item' wx:for="{{list}}" wx:key="{{index}}">
         <view class='item_left'>
           <view class='status color_text'>
-            <text class='f-34'>{{item.status_text}}</text>
+            <text class='f-30'>{{item.status_text}}</text>
           </view>
         </view>
         <view class='item_right'>
-          <view class="f-32 margT {{item.status_text=='提现成功'?'dec_color':'color_text2'}}">{{item.status_text=='提现成功'?'+':''}} <text class='f-38'>{{item.value}}</text> 元</view>
+          <view class="f-30 margT {{item.status_text=='提现成功'?'dec_color':'color_text2'}}">{{item.status_text=='提现成功'?'+':''}} <text class='f-38'>{{item.value}}</text> 元</view>
           <view class="time color_text_l f-30 margT">{{item.create_time}}</view>
         </view>
       </view>

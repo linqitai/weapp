@@ -41,11 +41,18 @@ Page({
   },
   submit: function () {
     let _this = this;
+
     let prams = {
       bankname: _this.data.bankname,
       bankcard: _this.data.bankcard,
-      deposit_bank: _this.data.deposit_bank ? _this.data.deposit_bank : '',
       mobile: _this.data.mobile
+    }
+    if (_this.data.deposit_bank){
+      prams.deposit_bank = _this.data.deposit_bank
+    }
+    if (App.hasNull(prams)){
+      App.showToast("请填写完整信息")
+      return;
     }
     let url = _this.data.active == 0 ? 'extract/bingding_bankcard' :'extract/bingding_alipay'
     App._post_form(url, prams, function (res) {

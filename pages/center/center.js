@@ -30,6 +30,7 @@ Page({
     let _this = this;
     App._get('expand/index', {}, function (result) {
       _this.setData(result.data);
+      // wx.setStorageSync("my_info", JSON.stringify(result.data))
     });
   },
 })

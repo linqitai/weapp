@@ -101,6 +101,15 @@
           "id": -1,
           "name": "绑定信息",
           "pathName": "pages/center/bind/bind"
+        },{
+          "id": -1,
+          "name": "充值",
+          "pathName": "pages/person/chongzhi/chongzhi"
+        },
+        {
+          "id": -1,
+          "name": "账户充值",
+          "pathName": "pages/person/chongzhi/input"
         }
 			]
 		}

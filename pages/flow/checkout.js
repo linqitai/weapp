@@ -34,7 +34,7 @@ Page({
     page: 1,
     isLastPage: false,
     isHiddenCounpon:false,
-    integral_checked:true
+    integral_checked:false
   },
   /**
    * 生命周期函数--监听页面加载
@@ -66,6 +66,15 @@ Page({
   onChangeIntegral(){
     this.setData({
       integral_checked: !this.data.integral_checked
+    })
+    let p = ''
+    if(this.data.integral_checked){
+      p = (this.data.order_pay_price - this.data.my_intergal)
+    }else{
+      p = (this.data.order_pay_price + this.data.my_intergal)
+    }
+    this.setData({
+      order_pay_price: p
     })
   },
   toGetAddress(){
@@ -245,6 +254,9 @@ Page({
         my_intergal: parseInt(result.data.my_intergal),
         my_money: parseFloat(result.data.my_money)
       });
+      _this.setData({
+        order_pay_price: _this.data.order_pay_price - _this.data.my_money
+      })
       if(result.data.address){
         _this.setData({
           exist_address:true
@@ -481,19 +493,20 @@ Page({
           paySign: result.data.payment.paySign,
           success: function (res) {
             // 跳转到订单详情
+            wx.setStorageSync('type', 'delivery')
             wx.redirectTo({
               url: '../order/detail?order_id=' + result.data.order_id,
             });
           },
           fail: function (res) {
-            console.log(res,"res")
-            let prams = {
-              order_id: result.data.order_id
-            }
-            console.log(prams, "prams")
-            App._post_form('user.order/order_del', prams, function (result) {
-              _this.onShow()
-            });
+            _this.onShow()
+            // let prams = {
+            //   order_id: result.data.order_id
+            // }
+            // console.log(prams, "prams")
+            // App._post_form('user.order/order_del', prams, function (result) {
+            //   _this.onShow()
+            // });
             // App.showError('订单未支付', function () {
             //   // 跳转到未付款订单
             //   let prams = {

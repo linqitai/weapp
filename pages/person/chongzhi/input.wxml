@@ -1,0 +1,14 @@
+<view class='container bg_color'>
+  <view class='box bg_white box_border_radius'>
+    <view class='line1'>充值方式</view>
+    <view class='line2'>
+      <text class='icon icon-wx'></text>
+      <text class='text'>微信</text>
+    </view>
+    <view class='line3'>充值金额</view>
+    <view class='line4'>
+      <text class='unit'>￥</text><input class='input' placeholder-class="placeholder" placeholder='请输入充值金额'></input>
+    </view>
+    <button class='submit' bindtap="setDisabled">下一步</button>
+  </view>
+</view>

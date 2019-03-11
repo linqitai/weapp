@@ -7,7 +7,7 @@
         <van-button class='detail_btn' type="default" size="small" bind:click="toDetaiView">提现明细</van-button>
       </view>
       <view class='line2'>
-        <text class='text_digit'>0</text>
+        <text class='text_digit'>{{available}}</text>
         <text class='text'>积分</text>
       </view>
     </view>
@@ -18,7 +18,7 @@
         </view>
         <view class='cell_right'>
           <view style='text-align:right'>
-            <text class='text_digit'>0</text>
+            <text class='text_digit'>{{total}}</text>
             <text class='text'>积分</text>
           </view>
         </view>
@@ -40,7 +40,7 @@
         </view>
         <view class='cell_right'>
           <view style='text-align:right'>
-            <text class='text_digit'>0</text>
+            <text class='text_digit'>{{used}}</text>
             <text class='text'>积分</text>
           </view>
         </view>

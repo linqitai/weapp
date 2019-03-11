@@ -15,8 +15,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.type,"options")
-    this.setData({ dataType: options.type || 'all' });
+    console.log(options ,"options")
+    console.log(JSON.stringify(options), "options")
+    console.log(JSON.stringify(options.type),"options.type")
+    this.setData({ dataType: wx.getStorageSync('type') || options.type || 'all' });
+    if (typeof options.type == Object){
+    }else{
+      wx.setStorageSync('type', options.type)
+    }
     // 获取订单列表
     this.getOrderList(this.data.dataType);
   },
@@ -29,7 +35,7 @@ Page({
   onUnload: function () {
     console.log("----------------onUnLoad----------------")
     wx.switchTab({
-      url: '../user/index'
+      url: '../person/person'
     })
   },
   /**

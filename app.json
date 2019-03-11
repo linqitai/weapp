@@ -13,6 +13,8 @@
     "pages/center/ewm/ewm",
     "pages/shopcart/shopcart",
     "pages/person/person",
+    "pages/person/chongzhi/chongzhi",
+    "pages/person/chongzhi/input",
     "pages/logs/logs",
     "pages/login/login",
     "pages/goodsdetail/goodsdetail",

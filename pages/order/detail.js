@@ -8,19 +8,33 @@ Page({
   data: {
     order_id: null,
     order: {},
+    type:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(wx.getStorageInfoSync('type'),"type")
+    this.setData({
+      type: wx.getStorageInfoSync('type')
+    })
     this.data.order_id = options.order_id;
     this.getOrderDetail(options.order_id);
   },
   onUnload: function () {
-    wx.navigateTo({
-      url: '../order/index?type=delivery'
-    })
+    console.log('detail onUnload')
+    let _this = this;
+    let pages = getCurrentPages();
+    let last_page = pages[pages.length - 2];
+    console.log(pages[pages.length-2],"last_pages")
+    if (last_page.route =="pages/order/index"){
+      wx.navigateBack()
+    }else{
+      wx.navigateTo({
+        url: '../order/index?type=' + wx.getStorageInfoSync('type')
+      })
+    }
   },
   /**
    * 获取订单详情
@@ -38,7 +52,7 @@ Page({
   goodsDetail: function (e) {
     let goods_id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../goods/index?goods_id=' + goods_id
+      url: '../goodsdetail/goodsdetail?goods_id=' + goods_id
     });
   },
 

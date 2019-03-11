@@ -15,6 +15,7 @@ Page({
     })
   },
   onShow: function () {
+    wx.setStorageSync('type', "")
     // 获取当前用户信息
     this.getUserDetail();
   },

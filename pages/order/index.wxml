@@ -1,7 +1,10 @@
 <view class="container m-b5">
   <view class="goods-detail-box">
     <view class="header f-28 col-3">
-      <view catchtap="bindHeaderTap" class="header_item {{dataType==='payment'?'active':''}}" data-type="all">
+    <view catchtap="bindHeaderTap" class="header_item {{dataType==='all'?'active':''}}" data-type="all">
+        全部
+      </view>
+      <view catchtap="bindHeaderTap" class="header_item {{dataType==='payment'?'active':''}}" data-type="payment">
         待付款<text class='tag' wx:if="{{orderCount.payment}}">{{orderCount.payment}}</text>
       </view>
       <view bindtap="bindHeaderTap" class="header_item {{dataType==='delivery'?'active':''}}" data-type="delivery">
