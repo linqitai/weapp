@@ -17,6 +17,9 @@
   margin-top: 80rpx;
   text-align: center;
 }
+.line3 .money{
+  font-size: 42rpx;
+}
 .submit{
   width: 400rpx !important;
   height: 82rpx;

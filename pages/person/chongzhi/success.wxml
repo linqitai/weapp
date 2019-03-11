@@ -3,11 +3,11 @@
     <text class='icon icon-success'></text>
   </view>
   <view class='line2 theme_color'>充值成功</view>
-  <view class='line3 theme_color'>
-    微信充值金额：￥ <text class='money'>500</text>
+  <view class='line3'>
+    微信充值金额：￥<text class='money'>{{value}}</text>
   </view>
   <!-- <van-button class='submit' round="true" size="normal" type="info" bind:click="toApplyView">我要提现</van-button> -->
-  <button class='submit' bindtap="setDisabled">充值</button>
+  <button class='submit' bindtap="completeBtn">完成</button>
   <view class='line4 color_text2'>充值须知
     <text class='theme_color'>了解详情</text>
   </view>

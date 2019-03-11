@@ -1,8 +1,8 @@
 <view class='container bg_white'>
   <view class='line1'>账户余额（元）</view>
-  <view class='line2'>1.35</view>
+  <view class='line2'>{{userInfo.money['available']?userInfo.money['available']:'0.00'}}</view>
   <!-- <van-button class='submit' round="true" size="normal" type="info" bind:click="toApplyView">我要提现</van-button> -->
-  <button class='submit' bindtap="setDisabled">充值</button>
+  <button class='submit' bindtap="toInputView">充值</button>
   <view class='line4 color_text2'>充值须知
     <text class='theme_color'>了解详情</text>
   </view>

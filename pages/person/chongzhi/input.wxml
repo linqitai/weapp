@@ -7,8 +7,8 @@
     </view>
     <view class='line3'>充值金额</view>
     <view class='line4'>
-      <text class='unit'>￥</text><input class='input' placeholder-class="placeholder" placeholder='请输入充值金额'></input>
+      <text class='unit'>￥</text><input value='{{value}}' class='input' placeholder-class="placeholder" placeholder='请输入充值金额' bindinput='bindinput'></input>
     </view>
-    <button class='submit' bindtap="setDisabled">下一步</button>
+    <button class='submit' bindtap="nextBtn">下一步</button>
   </view>
 </view>

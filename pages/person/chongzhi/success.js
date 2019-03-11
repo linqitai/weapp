@@ -5,14 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+    value:''
   },
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    
+    var _this = this;
+    _this.setData({
+      value:options.value
+    })
   },
 
   /**
@@ -20,5 +23,8 @@ Page({
    */
   onShow: function () {
 
+  },
+  completeBtn(){
+    wx.navigateBack()
   }
 });

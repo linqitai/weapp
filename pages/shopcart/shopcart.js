@@ -13,7 +13,7 @@ Page({
     total_price: 0,
     is_select_arr:[],
     total_price:0.00,
-    submit_disable:true
+    submit_disable:false
   },
 
   /**
@@ -33,8 +33,7 @@ Page({
     wx.showLoading()
     total_price = 0;
     this.setData({
-      is_select_all: false,
-      total_price: total_price
+      is_select_all: true
     })
     this.getCartList();
   },
@@ -127,7 +126,8 @@ Page({
       console.log(result.data.goods_list,"result.data.goods_list")
       for(let i in result.data.goods_list){
         console.log(i,'i')
-        is_select_arr.push(false)
+        is_select_arr.push(true)
+        _this.calculate_total_price(i)
       }
       _this.setData({
         is_select_arr: is_select_arr

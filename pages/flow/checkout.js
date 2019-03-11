@@ -70,7 +70,11 @@ Page({
     })
     let p = ''
     if(this.data.integral_checked){
-      p = (this.data.order_pay_price - this.data.my_intergal)
+      if (this.data.my_intergal >= this.data.order_pay_price){
+        p=0;
+      }else{
+        p = (this.data.order_pay_price - this.data.my_intergal)
+      }
     }else{
       p = (this.data.order_pay_price + this.data.my_intergal)
     }
@@ -129,13 +133,6 @@ Page({
           windowHeight: res.windowHeight,
           windowWidth: res.windowWidth
         })
-        // console.log(res.model)
-        // console.log(res.pixelRatio)
-        // console.log(res.windowWidth)
-        // console.log(res.windowHeight)
-        // console.log(res.language)
-        // console.log(res.version)
-        // console.log(res.platform)
       }
     })
   },
@@ -500,7 +497,10 @@ Page({
             });
           },
           fail: function (res) {
-            _this.onShow()
+            wx.redirectTo({
+              url: '../order/index?type=payment',
+            })
+            // _this.onShow()
             // let prams = {
             //   order_id: result.data.order_id
             // }
