@@ -23,7 +23,7 @@
     <!-- {{list[0].image}} -->
     <swiper class="box_border_radius swiper" autoplay="{{autoplay}}" duration="{{duration}}" circular="{{true}}" indicator-dots="{{indicatorDots}}" interval="{{interval}}"  indicator-active-color="#000" style="height:{{imgHeights[0][imgCurrent[0]]}}rpx">
       <swiper-item wx:for="{{list}}" wx:key="this" class="box_border_radius">
-        <image class="slide-image box_border_radius" bindload="imagesHeight" src="{{item.image}}" data-id="{{index}}" data-index="{{index}}"></image>
+        <image class="slide-image box_border_radius" bindload="imagesHeight" src="{{item.image}}" data-id="{{index}}" data-index="{{index}}" bindtap='toDetailView' data-url='{{item.url}}'></image>
       </swiper-item>
     </swiper>
     <view class='tranparent_space'></view>

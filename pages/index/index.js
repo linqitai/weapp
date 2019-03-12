@@ -34,6 +34,13 @@ Page({
   onLoad: function () {
     this.getList();
   },
+  toDetailView(e){
+    let url = e.currentTarget.dataset.url
+    console.log(url,"url")
+    wx.navigateTo({
+      url: url,
+    })
+  },
   /**
    * 计算图片高度
    */

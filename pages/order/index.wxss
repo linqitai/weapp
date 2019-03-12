@@ -32,7 +32,7 @@
 }
 
 .header .active {
-  color: #fd4a5f;
+  color: #0D8BFF;
 }
 
 .wrapper {
