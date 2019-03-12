@@ -127,6 +127,11 @@
 .orderRecordBox .line2 .item{
   flex: 1;
   text-align: center;
+  position: relative;
+}
+.contact_button{
+  width: 84rpx;
+  height: 84rpx;
 }
 .orderRecordBox .line2 .item .icon{
   position: relative;
@@ -205,6 +210,7 @@
 .cell_group .cell .cell_content{
   flex: auto;
   border-bottom: 1rpx solid #efefef;
+  position: relative;
 }
 .cell_group .cell:last-child .cell_content{
   border-bottom: 1rpx solid transparent;

@@ -1,6 +1,7 @@
 let App = getApp();
 var couponList = [];
 var post_pay_typeCouponList = [];
+var my_intergal, my_money, order_total_price, sub_jf, sub_ye,result_price;
 Page({
   /**
    * 页面的初始数据
@@ -35,7 +36,10 @@ Page({
     isLastPage: false,
     isHiddenCounpon:false,
     integral_checked:false,
-    integral_status:0
+    integral_status:0,
+    sub_jf: 0,
+    sub_ye:'0.00',
+    result_price:'0.00'
   },
   /**
    * 生命周期函数--监听页面加载
@@ -64,22 +68,74 @@ Page({
       couponIndex:0
     })
   },
-  onChangeIntegral(){
-    this.setData({
-      integral_checked: !this.data.integral_checked
-    })
-    let p = ''
-    if(this.data.integral_checked){
-      if (this.data.my_intergal >= this.data.order_pay_price){
-        p=0;
-      }else{
-        p = (this.data.order_pay_price - this.data.my_intergal)
+  calculate_my_money(){
+    if (!this.data.integral_checked){
+      let p = '', sub_ye = ''
+      if (this.data.my_money >= this.data.order_total_price) {
+        p = 0;
+        sub_ye = this.data.order_total_price
+      } else {
+        p = (this.data.order_total_price - this.data.my_money)
+        sub_ye = this.data.my_money
       }
-    }else{
-      p = (this.data.order_pay_price + this.data.my_intergal)
+      result_price = p
+      this.setData({
+        result_price: p,
+        sub_ye
+      })
+    }
+  },
+  calculate_my_money2(pay,my_money){
+    let p = '', sub_ye = ''
+    if (my_money >= pay) {//余额大于所需支付金额
+      p = 0;
+      sub_ye = pay
+    } else {
+      p = (pay - my_money)
+      sub_ye = my_money
     }
     this.setData({
-      order_pay_price: p
+      order_pay_price: p,
+      sub_ye
+    })
+  },
+  onChangeIntegral() { // my_intergal 积分 my_money余额
+    let _this = this;
+    _this.setData({
+      integral_checked: !_this.data.integral_checked
+    })
+    if (_this.data.integral_checked){//选择积分抵扣
+      if(my_intergal>=order_total_price){
+        result_price = '0.00';
+        sub_jf = order_total_price;
+        sub_ye = '0.00'
+      }else{
+        result_price = order_total_price - my_intergal
+        console.log(result_price, 'result_price')
+        sub_jf = my_intergal;
+        if (my_money >= result_price) {
+          sub_ye = result_price
+          result_price = '0.00';
+        }else{
+          result_price = result_price - my_money
+          sub_ye = my_money
+        }
+      }
+    } else {// 不选择积分抵扣
+      if (my_money >= order_total_price){
+        result_price = '0.00';
+        sub_jf = 0;
+        sub_ye = order_total_price
+      }else{
+        result_price = order_total_price - my_money;
+        sub_jf = 0;
+        sub_ye = my_money
+      }
+    }
+    _this.setData({
+      result_price,
+      sub_jf,
+      sub_ye
     })
   },
   toGetAddress(){
@@ -248,13 +304,17 @@ Page({
         App.showError(_this.data.error);
       }
       _this.setData(result.data);
+      my_intergal = parseInt(result.data.my_intergal);
+      my_money = parseFloat(result.data.my_money);
+      order_total_price = parseFloat(result.data.order_total_price)
       _this.setData({
         my_intergal: parseInt(result.data.my_intergal),
         my_money: parseFloat(result.data.my_money)
       });
-      _this.setData({
-        order_pay_price: _this.data.order_pay_price - _this.data.my_money
-      })
+      _this.calculate_my_money();
+      // _this.setData({
+      //   order_pay_price: _this.data.order_pay_price - _this.data.my_money
+      // })
       if(result.data.address){
         _this.setData({
           exist_address:true
@@ -478,57 +538,46 @@ Page({
         });
         return false;
       }
-
-      //条件为线上支付 
-      console.log(post_pay_type,"post_pay_typepost_pay_typepost_pay_typepost_pay_type")
-      if(post_pay_type==10){
-        // 发起微信支付
-        wx.requestPayment({
-          timeStamp: result.data.payment.timeStamp,
-          nonceStr: result.data.payment.nonceStr,
-          package: 'prepay_id=' + result.data.payment.prepay_id,
-          signType: 'MD5',
-          paySign: result.data.payment.paySign,
-          success: function (res) {
-            // 跳转到订单详情
-            wx.setStorageSync('type', 'delivery')
-            wx.setStorageSync('to_view', 'person')
-            wx.navigateTo({
-              url: '../order/detail?order_id=' + result.data.order_id,
-            });
-          },
-          fail: function (res) {
-            wx.navigateTo({
-              url: '../order/index?type=payment',
-            })
-            // _this.onShow()
-            // let prams = {
-            //   order_id: result.data.order_id
-            // }
-            // console.log(prams, "prams")
-            // App._post_form('user.order/order_del', prams, function (result) {
-            //   _this.onShow()
-            // });
-            // App.showError('订单未支付', function () {
-            //   // 跳转到未付款订单
-            //   let prams = {
-            //     order_id: result.data.order_id
-            //   }
-            //   console.log(prams,"prams")
-            //   App._post_form('user.order/order_del', prams, function (result) {
-            //     _this.onShow()
-            //   });
-            // });
-          },
-        });
-      }else{
-        console.log(post_pay_type, "post_pay_type else redirectTo")
+      console.log(result_price,"result_price")
+      if (result_price == '0.00' || result_price==0){
+        // 跳转到订单详情
+        wx.setStorageSync('type', 'delivery')
         wx.setStorageSync('to_view', 'person')
         wx.navigateTo({
-          url: '../order/detail?order_id=' + result.data.order_id,
+          url: '../order/detail?order_id=' + result.data.order_id
         });
+      }else{
+        //条件为线上支付 
+        if (post_pay_type == 10) {
+          // 发起微信支付
+          wx.requestPayment({
+            timeStamp: result.data.payment.timeStamp,
+            nonceStr: result.data.payment.nonceStr,
+            package: 'prepay_id=' + result.data.payment.prepay_id,
+            signType: 'MD5',
+            paySign: result.data.payment.paySign,
+            success: function (res) {
+              // 跳转到订单详情
+              wx.setStorageSync('type', 'delivery')
+              wx.setStorageSync('to_view', 'person')
+              wx.navigateTo({
+                url: '../order/detail?order_id=' + result.data.order_id,
+              });
+            },
+            fail: function (res) {
+              wx.navigateTo({
+                url: '../order/index?type=payment',
+              })
+            },
+          });
+        } else {
+          console.log(post_pay_type, "post_pay_type else redirectTo")
+          wx.setStorageSync('to_view', 'person')
+          wx.navigateTo({
+            url: '../order/detail?order_id=' + result.data.order_id,
+          });
+        }
       }
-      
     };
 
     // 按钮禁用, 防止二次提交
@@ -612,6 +661,7 @@ Page({
       App._post_form('order/cart', prams, function(result) {
         // success
         console.log('success');
+        
         callback(result);
       }, function(result) {
         // fail

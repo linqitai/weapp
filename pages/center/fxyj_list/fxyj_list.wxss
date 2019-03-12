@@ -1,0 +1,27 @@
+.list{
+  background-color: white;
+}
+.list .item{
+  display: flex;
+  padding: 20rpx 24rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.list .item .item_left{
+  flex: auto;
+}
+.list .item .item_left .status{
+  text-align: left;
+}
+.list .item .item_right{
+  flex: 0 0 200rpx;
+  text-align: right;
+}
+.list .item:last-child{
+  border-bottom: 1rpx solid transparent;
+}
+.type{
+  margin-top: 8rpx;
+}
+.remark{
+  margin-top: 4rpx;
+}

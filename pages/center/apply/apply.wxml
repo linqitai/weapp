@@ -25,7 +25,7 @@
               </view>
             </view>
           </view>
-          <view class='color_text2 f-26 tip1'>提现金额不能小于1.00</view>
+          <view class='color_text2 f-26 tip1'>{{remark}}</view>
           <view class='getMoneyInfo box_border_radius box_margin_top'>
             <view class='line1'>
               <view class='f-34'>提现信息</view>
@@ -145,7 +145,7 @@
               </view>
             </view>
             <view class='line2' wx:if="{{hasInfo==true}}">
-              <view class='cell_group box_border_radius box_margin_top'>
+              <view class='cell_group box_border_radius box_margin_top' wx:if="{{type==1}}">
                 <view class='cell'>
                   <view class='cell_left color_text2'>
                     姓名：
@@ -165,6 +165,32 @@
                 <view class='cell'>
                   <view class='cell_left color_text2'>
                     银行卡：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    {{bankcard}}
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    手机号：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                    {{mobile}}
+                  </view>
+                </view>
+              </view>
+              <view class='cell_group box_border_radius box_margin_top' wx:if="{{type==2}}">
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    姓名：
+                  </view>
+                  <view class='cell_right t_align_right color_text'>
+                     {{bankname}}
+                  </view>
+                </view>
+                <view class='cell'>
+                  <view class='cell_left color_text2'>
+                    账号：
                   </view>
                   <view class='cell_right t_align_right color_text'>
                     {{bankcard}}

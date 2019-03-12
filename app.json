@@ -6,6 +6,7 @@
     "pages/center/team/team",
     "pages/center/center",
     "pages/center/order/order",
+    "pages/center/fxyj_list/fxyj_list",
     "pages/center/getMoney/getMoney",
     "pages/center/apply/apply",
     "pages/center/bind/bind",

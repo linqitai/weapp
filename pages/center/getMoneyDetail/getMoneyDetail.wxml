@@ -16,11 +16,11 @@
       <view class="title-footer p-r" wx:if="{{!isLastPage}}">
         <text class="f-24 col-9 cont">数据加载完毕</text>
       </view>
-  </scroll-view>
+    </scroll-view>
     <view wx:else>
       <view class="yoshop-notcont">
         <text class="iconfont icon-null icon"></text>
-        <text class="cont">亲，您还没有团队</text>
+        <text class="cont">亲，此处暂无数据</text>
       </view>
     </view>
 </view>

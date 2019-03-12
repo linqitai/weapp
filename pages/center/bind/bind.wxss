@@ -22,12 +22,12 @@
   border-bottom: 1rpx solid #efefef;
 }
 .cell_group .cell .cell_left{
-  flex: 1;
+  flex: 0 0 180rpx;
   padding-top: 6rpx;
   font-size: 32rpx;
 }
 .cell_group .cell .cell_right{
-  flex: 1;
+  flex: auto;
 }
 .cell_group .cell .cell_right .inputMoney{
   font-size: 32rpx;
@@ -73,7 +73,7 @@
 .line2 .cell_right .input{
   height: 80rpx;
   line-height: 80rpx;
-  font-size: 32rpx;
+  font-size: 28rpx;
   color: #646464;
   margin-top: 20rpx;
 }

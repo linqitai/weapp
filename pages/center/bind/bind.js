@@ -10,7 +10,8 @@ Page({
     bankname: '',
     bankcard: '',
     deposit_bank: '',
-    mobile: ''
+    mobile: '',
+    btn_text:""
   },
   
   /**
@@ -18,7 +19,10 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
-    
+    console.log(options.type,"type")
+    _this.setData({
+      active: options.type-1
+    })
     this.getAccountInfo(_this.data.active)
   },
   getAccountInfo: function (active) { // 1银行卡 2支付宝
@@ -28,6 +32,9 @@ Page({
     }
     App._post_form('extract/get_bank', prams, function (result) {
       _this.setData(result.data);
+      _this.setData({
+        btn_text: result.data == null ? '立刻绑定' :'修改绑定'
+      })
     });
   },
   tabOnChange(event) {
@@ -70,7 +77,9 @@ Page({
       // let result = res.data
       console.log(res, "res")
       if (res.code == 1) {
-        App.showSuccess(res.msg)
+        App.showSuccess(res.msg,function(){
+          wx.navigateBack()
+        })
       }
     });
   }

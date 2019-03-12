@@ -7,11 +7,11 @@ Page({
    */
   data: {
     list: [],
-    page:1,
+    page: 1,
     windowHeight: '',
     isLastPage: false
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -20,7 +20,7 @@ Page({
     //设置scroll-view高度
     wx.getSystemInfo({
       success: function (res) {
-        console.log(res,"res")
+        console.log(res, "res")
         that.setData({
           windowHeight: res.windowHeight
         });
@@ -36,7 +36,7 @@ Page({
    */
   onShow: function () {
   },
-  scroll(e){
+  scroll(e) {
     // console.log(e.detail)
   },
   scrollToBottom() {
@@ -49,7 +49,7 @@ Page({
       })
       _this.getList();
     }
-    if (_this.data.page == _this.data.last_page && _this.data.isLastPage == false){
+    if (_this.data.page == _this.data.last_page && _this.data.isLastPage == false) {
       _this.data.isLastPage = true;
       // App.toast("数据已经加载完毕")
       return;
@@ -57,14 +57,14 @@ Page({
   },
   getList() {
     var _this = this;
-    App._get('extract/index', {
+    App._get('expand/integral_list', {
       page: _this.data.page
     }, function (result) {
       var list = result.data.data
-      for(var i=0;i<list.length;i++) {
-        var time = list[i].create_time;
+      for (var i = 0; i < list.length; i++) {
+        var time = list[i].update_time;
         // console.log(time.split(' ')[0],"time.split(' ')[0]")
-        list[i].create_time = time.split(' ')[0]
+        list[i].update_time = time.split(' ')[0]
         listArr.push(list[i])
       }
       _this.setData({
@@ -73,42 +73,10 @@ Page({
       })
     });
   },
-  toUseBtn(){
+  toUseBtn() {
     console.log("you click me")
     wx.switchTab({
       url: '/pages/category/index',
     })
-  },
-  /**
-   * 快捷导航 显示/隐藏
-   */
-  commonNav: function () {
-    this.setData({
-      nav_select: !this.data.nav_select
-    });
-  },
-
-  /**
-   * 快捷导航跳转
-   */
-  nav: function (e) {
-    let url = '';
-    switch (e.currentTarget.dataset.index) {
-      case 'home':
-        url = '../index/index';
-        break;
-      case 'fenlei':
-        url = '../category/index';
-        break;
-      case 'cart':
-        url = '../flow/index';
-        break;
-      case 'profile':
-        url = '../user/index';
-        break;
-    }
-    wx.switchTab({
-      url
-    });
   }
 });

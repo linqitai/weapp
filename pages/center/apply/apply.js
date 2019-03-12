@@ -16,7 +16,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onShow: function (options) {
     var _this = this;
     _this.getAccountInfo();
   },
@@ -45,7 +45,7 @@ Page({
       if(res.code == 1){
         App.showSuccess(res.msg,function(){
           wx.redirectTo({
-            url: '../../getMoneyDetail/getMoneyDetail',
+            url: '../getMoneyDetail/getMoneyDetail',
           })
         })
       }
@@ -73,14 +73,14 @@ Page({
         money: result.money,
         remark: result.remark
       });
-      if (result.bank.bankname || result.alipay.bankname) {
+      if (result.bank || result.alipay) {
         _this.setData({
           hasInfo: true
         })
       }
-      if (result.bank.bankname){
+      if (result.bank!=null){
         _this.setData(result.bank);
-      } else if ((result.bank.bankname == undefined || !result.bank) && result.alipay.bankname){
+      } else if (result.bank==null && result.alipay){
         _this.setData(result.alipay);
       }
       console.log(_this.data.type,"type")
@@ -98,8 +98,9 @@ Page({
     });
   },
   toBindView(){
+    let _this = this;
     wx.navigateTo({
-      url: '../bind/bind',
+      url: '../bind/bind?type='+ _this.data.type,
     })
   }
 });

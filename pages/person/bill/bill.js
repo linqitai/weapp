@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: [{ name: '张三' }],
+    list: [],
     page: 1,
     windowHeight: '',
     isLastPage: false
@@ -57,7 +57,7 @@ Page({
   },
   getList() {
     var _this = this;
-    App._get('expand/integral_list', {
+    App._get('extract/money_list', {
       page: _this.data.page
     }, function (result) {
       var list = result.data.data

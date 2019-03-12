@@ -98,6 +98,18 @@
       </view>
     </view>
     <view class="dis-flex flow-all-list">
+      <text class="flex-five">积分抵扣:</text>
+      <view class="flex-five t-r">
+        <text class="col-m">- {{sub_jf}}</text>
+      </view>
+    </view>
+    <view class="dis-flex flow-all-list">
+      <text class="flex-five">余额抵扣:</text>
+      <view class="flex-five t-r">
+        <text class="col-m">- ￥{{sub_ye}}</text>
+      </view>
+    </view>
+    <!-- <view class="dis-flex flow-all-list">
       <text class="flex-five">运费:</text>
       <view class="flex-five t-r">
         <text class="col-m">+ ￥0.00</text>
@@ -108,13 +120,13 @@
       <view class="flex-five t-r">
         <text class="col-m">- ￥0.00</text>
       </view>
-    </view>
+    </view> -->
   </view>
   <!-- 提交订单 -->
   <view class="flow-fixed-footer b-f m-top10">
     <view class="dis-flex chackout-box">
       <view class=" chackout-left pl-12 ">实付款：
-        <text class="col-m">￥{{order_pay_price}}</text>
+        <text class="col-m">￥{{result_price}}</text>
       </view>
       <view bindtap="submitOrder" class="chackout-right">
         <text class="flow-btn">提交订单</text>

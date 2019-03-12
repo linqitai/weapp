@@ -47,6 +47,11 @@
 					"name": "推广中心",
 					"pathName": "pages/center/center"
 				},
+        {
+          "id": -1,
+          "name": "分销佣金",
+          "pathName": "pages/center/fxyj_list"
+        },
 				{
 					"id": -1,
 					"name": "购物车",

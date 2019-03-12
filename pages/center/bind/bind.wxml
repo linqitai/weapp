@@ -89,7 +89,7 @@
     <view class='tranparent_space'></view>
     <view class='tranparent_space'></view>
     <view class='wing_blank'>
-      <van-button round="true" size="large" type="info" bindtap='submit'>立刻绑定</van-button>
+      <van-button round="true" size="large" type="info" bindtap='submit'>{{btn_text}}</van-button>
     </view>
     <view class='tranparent_space'></view>
   </scroll-view>
