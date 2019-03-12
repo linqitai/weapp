@@ -86,7 +86,7 @@
                 </view>
                 <view class='cell'>
                   <view class='cell_left color_text2'>
-                    账号：
+                    支付宝：
                   </view>
                   <view class='cell_right t_align_right color_text'>
                     {{bankcard}}
@@ -190,7 +190,7 @@
                 </view>
                 <view class='cell'>
                   <view class='cell_left color_text2'>
-                    账号：
+                    支付宝：
                   </view>
                   <view class='cell_right t_align_right color_text'>
                     {{bankcard}}

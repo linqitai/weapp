@@ -55,16 +55,17 @@
 
     <view class="padding-box b-f">
       <view bindtap="goodsDetail" class="dis-flex flow-shopList b-f" data-id="{{item.goods_id}}" wx:for="{{order.goods}}" wx:key="this">
-        <view class="flow-list-left">
+        <view class="flow_list_left">
           <image mode="scaleToFill" src="{{item.image.file_path}}"></image>
         </view>
-        <view class="flow-list-right">
-          <text class="h4 twolist-hidden">{{item.goods_name}}</text>
-          <text class="p f-22 col-7">{{item.goods_price}}{{item.spec.unit}}</text>
-          <view class="flow-list-cont">
-            <text class="flow-cont">￥{{item.goods_price}}</text>
-            <text class="small">×{{item.total_num}}</text>
+        <view class="flow-list-center">
+          <text class="twolist-hidden color_text f-34">{{item.goods_name}} <text class='f-14'>X</text><text class='f-24'>{{item.total_num}}</text> </text>
+          <view class="color_text_l f-30" style='margin-top:28rpx;'>
+            {{item.goods_attr}}
           </view>
+        </view>
+        <view class='flow-list_right f-30'>
+          ￥{{item.goods_price}}
         </view>
       </view>
     </view>

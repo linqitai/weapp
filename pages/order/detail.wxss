@@ -140,3 +140,30 @@
 .chackout-left-detail {
   line-height: 44px;
 }
+
+.flow_list_left{
+  flex: 0 0 120rpx;
+}
+.flow_list_left image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.flow-shopList{
+  flex-direction: row;
+}
+.flow-list_right{
+  position: relative;
+  flex: 0 0 80rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  
+}
+.flow-list-center{
+  flex: auto;
+  padding-left: 20rpx;
+}
+.flow-list-cont{
+  position: absolute;
+  left: 0;
+  bottom: 20rpx;
+}

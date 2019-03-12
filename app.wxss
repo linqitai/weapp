@@ -849,8 +849,8 @@
 }
 
 .flow-shopList .flow-list-left image {
-  width: 45rpx;
-  height: 45rpx;
+  width: 120rpx;
+  height: 120rpx;
   border: 1rpx solid #eee;
   background: #fff;
 }
@@ -1013,12 +1013,6 @@
   display: inline-block;
   color: #333;
 }
-
-.flow-shopList .flow-list-left image {
-  width: 100rpx;
-  height: 100rpx;
-}
-
 .profile-btn button {
   background: #0D8BFF;
   color: white;

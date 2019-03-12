@@ -228,3 +228,14 @@
   font-size: 30rpx;
   color: #323232;
 }
+.cell .type{
+  background-color: white;
+  height: 100rpx;
+  line-height: 96rpx;
+  padding-left: 0rpx !important;
+  padding-right: 0rpx !important;
+  border-left: 1rpx solid transparent !important;
+  border-right: 1rpx solid transparent !important;
+  border-top: 1rpx solid transparent !important;
+  border-bottom: 1rpx solid transparent !important;
+}

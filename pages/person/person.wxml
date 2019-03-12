@@ -94,7 +94,6 @@
     <view class='cell'>
       <view class='cell_icon'>
         <text class='icon icon-dizhi' style='font-size: 24px;color: #0CB7B9;'></text>
-        <!-- <van-icon class='cell_right_icon' style='font-size: 24px;color: #FD6263;' name="balance-list-o" /> -->
       </view>
       <navigator class='cell_content' url="../address/index" open-type='navigate'>
         <view class='cell_title left'>收货地址</view>
@@ -106,12 +105,10 @@
         <text class='icon icon-kefu' style='font-size: 24px;color: #FF8E2A;'></text>
       </view>
       <view class='cell_content'>
-        <view class='cell_title left'>客服热线</view>
-        <van-icon class='cell_right_icon right' name="arrow" />
-        <contact-button sessionFrom="weapp" class='contact_button right' type="default-light"></contact-button>
-        <contact-button sessionFrom="weapp" class='contact_button right' type="default-light"></contact-button>
-        <contact-button sessionFrom="weapp" class='contact_button right' type="default-light"></contact-button>
-        <contact-button sessionFrom="weapp" class='contact_button right' type="default-light"></contact-button>
+        <button class='type' open-type="contact" plain="true">
+          <view class='cell_title left'>客服热线</view>
+          <van-icon class='cell_right_icon right' name="arrow" />
+        </button>
       </view>
     </view>
   </view>
