@@ -8,7 +8,8 @@ Page({
   data: {
     order_id: null,
     order: {},
-    type:''
+    type:'',
+    last_page:''
   },
 
   /**
@@ -21,18 +22,21 @@ Page({
     })
     this.data.order_id = options.order_id;
     this.getOrderDetail(options.order_id);
+
+    let pages = getCurrentPages();
+    console.log(pages[pages.length - 1].route, "last_pages.route-1")
+    let last_page = pages[pages.length - 2];
+    this.setData({
+      last_page: last_page.route
+    })
+    console.log(last_page.route, "last_pages.route-2")
   },
   onUnload: function () {
     console.log('detail onUnload')
     let _this = this;
-    let pages = getCurrentPages();
-    let last_page = pages[pages.length - 2];
-    console.log(pages[pages.length-2],"last_pages")
-    if (last_page.route =="pages/order/index"){
-      wx.navigateBack()
-    }else{
-      wx.navigateTo({
-        url: '../order/index?type=' + wx.getStorageInfoSync('type')
+    if(wx.getStorageSync('to_view')=='person'){
+      wx.switchTab({
+        url: '../person/person',
       })
     }
   },

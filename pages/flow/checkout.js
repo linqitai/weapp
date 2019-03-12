@@ -472,7 +472,7 @@ Page({
       if (result.code === -10) {
         App.showError(result.msg, function() {
           // 跳转到未付款订单
-          wx.redirectTo({
+          wx.navigateTo({
             url: '../order/index?type=payment',
           });
         });
@@ -492,12 +492,13 @@ Page({
           success: function (res) {
             // 跳转到订单详情
             wx.setStorageSync('type', 'delivery')
-            wx.redirectTo({
+            wx.setStorageSync('to_view', 'person')
+            wx.navigateTo({
               url: '../order/detail?order_id=' + result.data.order_id,
             });
           },
           fail: function (res) {
-            wx.redirectTo({
+            wx.navigateTo({
               url: '../order/index?type=payment',
             })
             // _this.onShow()
@@ -522,7 +523,8 @@ Page({
         });
       }else{
         console.log(post_pay_type, "post_pay_type else redirectTo")
-        wx.redirectTo({
+        wx.setStorageSync('to_view', 'person')
+        wx.navigateTo({
           url: '../order/detail?order_id=' + result.data.order_id,
         });
       }

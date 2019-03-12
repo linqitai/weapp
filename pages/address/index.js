@@ -25,6 +25,11 @@ Page({
     // 获取收货地址列表
     this.getAddressList();
   },
+  onUnload(){
+    wx.switchTab({
+      url: '../person/person',
+    })
+  },
   /**
  * 快捷导航 显示/隐藏
  */

@@ -8,7 +8,9 @@ Page({
   data: {
     active: 1,
     hasInfo:false,
-    value:''
+    value:'',
+    money:'',
+    remark:''
   },
   
   /**
@@ -41,7 +43,11 @@ Page({
       // let result = res.data
       console.log(res,"res")
       if(res.code == 1){
-        App.showSuccess(res.msg)
+        App.showSuccess(res.msg,function(){
+          wx.redirectTo({
+            url: '../../getMoneyDetail/getMoneyDetail',
+          })
+        })
       }
     });
   },
@@ -57,13 +63,15 @@ Page({
   getAccountInfo: function () {
     let _this = this;
     let prams = {
-      money_type: _this.data.active == 1 ? 2 : 1
+      money_type: _this.data.active == 1 ? 2 : 1,
+
     }
     App._post_form('extract/money_extract_view', prams, function (res) {
       // type 1银行卡 2支付宝
       let result = res.data
       _this.setData({
-        money: result.money
+        money: result.money,
+        remark: result.remark
       });
       if (result.bank.bankname || result.alipay.bankname) {
         _this.setData({
@@ -72,7 +80,7 @@ Page({
       }
       if (result.bank.bankname){
         _this.setData(result.bank);
-      } else if ((!result.bank.bankname) && result.alipay.bankname){
+      } else if ((result.bank.bankname == undefined || !result.bank) && result.alipay.bankname){
         _this.setData(result.alipay);
       }
       console.log(_this.data.type,"type")

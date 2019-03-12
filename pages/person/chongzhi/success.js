@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     var _this = this;
     _this.setData({
-      value:options.value
+      value: parseFloat(options.value).toFixed(2)
     })
   },
 

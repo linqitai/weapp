@@ -31,9 +31,9 @@
       </view> -->
 
     </view>
-    <scroll-view bindscrolltolower="bindDownLoad" class="wing_blank weui-panel weui-panel_access" scroll-y="true" style="height: {{scrollHeight}}px" wx:if="{{list.data.length > 0}}">
+    <scroll-view bindscrolltolower="bindDownLoad" class="weui-panel weui-panel_access" scroll-y="true" style="height: {{scrollHeight}}px" wx:if="{{list.data.length > 0}}">
         <view class='tranparent_space'></view>
-        <view class='goods_list'>
+        <view class='goods_list' style='margin:0 20rpx;'>
           <navigator class="item" hover-class="none" url="../goodsdetail/goodsdetail?goods_id={{item.goods_id}}" wx:for="{{list.data}}" wx:key="this">
             <image class="goods_img" mode="aspectFit" src="{{item.image[0].file_path}}"></image>
             <view class='title'>{{item.goods_name}}</view>

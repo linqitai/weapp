@@ -146,11 +146,13 @@
   justify-content:space-between;
 }
 .goods_list .item{
-  flex: 0 0 45%;
+  flex:0 0 44%;
   background-color: white;
-  padding: 14rpx;
+  margin-right: 6rpx;
+  margin-left: 6rpx;
   margin-bottom: 14rpx;
   border-radius: 12rpx;
+  padding: 14rpx;
 }
 .goods_list .item .goods_img{
   width: 100%;

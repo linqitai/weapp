@@ -6,14 +6,14 @@
         </view>
         <view class='item_right'>
           <view class='item_right_left'>
-            <view class='name color_text f-38 margT'>{{item.nickName}}</view>
-            <view class="time color_text_l f-30 margT">加入时间：{{item.create_time}}</view>
+            <view class='name color_text2 f-32 margT'>{{item.nickName}}</view>
+            <view class="time color_text_l f-26 margT">加入时间：{{item.create_time}}</view>
           </view>
           <view class='item_right_right'>
-            <view class='money dec_color margT'>
-              <text class='f-42'>{{item.total_price}}</text><text class='f-30'>元</text>
+            <view class='money dec_color'>
+              <text class='f-34'>{{item.total_price}}</text><text class='f-30'>元</text>
             </view>
-            <view class='f-30 color_text_l margT'>销售业绩</view>
+            <view class='f-28 color_text_l'>销售业绩</view>
           </view>
         </view>
       </view>

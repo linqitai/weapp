@@ -8,7 +8,7 @@
       </view>
       <view class='line2'>
         <text class='text_digit'>{{available}}</text>
-        <text class='text'>积分</text>
+        <!-- <text class='text'>积分</text> -->
       </view>
     </view>
     <view class='cell_group box_border_radius box_margin_top'>
@@ -19,11 +19,11 @@
         <view class='cell_right'>
           <view style='text-align:right'>
             <text class='text_digit'>{{total}}</text>
-            <text class='text'>积分</text>
+            <!-- <text class='text'>积分</text> -->
           </view>
         </view>
       </view>
-      <view class='cell'>
+      <!-- <view class='cell'>
         <view class='cell_left color_text2'>
           待打款佣金
         </view>
@@ -33,15 +33,15 @@
             <text class='text'>积分</text>
           </view>
         </view>
-      </view>
+      </view> -->
       <view class='cell'>
         <view class='cell_left color_text2'>
-          已提现佣金
+          已使用佣金
         </view>
         <view class='cell_right'>
           <view style='text-align:right'>
             <text class='text_digit'>{{used}}</text>
-            <text class='text'>积分</text>
+            <!-- <text class='text'>积分</text> -->
           </view>
         </view>
       </view>

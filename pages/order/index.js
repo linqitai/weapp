@@ -25,6 +25,10 @@ Page({
     }
     // 获取订单列表
     this.getOrderList(this.data.dataType);
+
+    let pages = getCurrentPages();
+    console.log(pages[pages.length - 1].route, "last_pages.route-1")
+    console.log(pages[pages.length - 2].route, "last_pages.route-2")
   },
 
   /**
@@ -34,9 +38,18 @@ Page({
   },
   onUnload: function () {
     console.log("----------------onUnLoad----------------")
-    wx.switchTab({
-      url: '../person/person'
-    })
+    let _this = this;
+    let pages = getCurrentPages();
+    let last_page = pages[pages.length - 2];
+    console.log(last_page.route, "last_pages")
+    console.log(pages[pages.length - 1].route, "last_pages-1")
+    if (last_page.route == "pages/flow/checkout") {
+      wx.switchTab({
+        url: '../person/person',
+      })
+    } else {
+      wx.navigateBack()
+    }
   },
   /**
    * 获取订单列表

@@ -54,7 +54,21 @@
 .getMoneyInfo{
   overflow: hidden;
   background-color: white;
-  padding: 24rpx 28rpx;
+  padding: 24rpx 0;
+}
+.line1{
+  display: flex;
+}
+.line1 view{
+  flex: 1;
+  padding-left: 28rpx;
+}
+.line1 text{
+  padding-right: 28rpx;
+  flex: 1;
+  font-size: 30rpx;
+  text-align: right;
+  color: #c7c7c7;
 }
 .line2 .tip2{
   margin-top: 50rpx;

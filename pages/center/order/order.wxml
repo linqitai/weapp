@@ -1,13 +1,13 @@
 <view style="height:{{windowHeight}}px;" class='order_container container'>
     <scroll-view class="list" lower-threshold="200" scroll-y="true" bindscrolltolower="scrollToBottom" bindscroll="scroll" wx:if="{{list.length}}">
       <view class='item' wx:for="{{list}}" wx:key="{{index}}">
-        <view class='item_left'>
-          <view class='name color_text2 f-34 margT'>{{item.user.nickName}}</view>
-          <view class="time color_text_l f-30">下单时间：{{item.create_time}}</view>
+        <view class='item_left color_text'>
+          <view class='name f-30 margT'>{{item.user.nickName}}</view>
+          <view class="time color_text_l f-26">下单时间：{{item.create_time}}</view>
         </view>
         <view class='item_right'>
           <view class='money dec_color'>
-            <text class='f-42'>{{item.total_price}}</text><text class='f-30'>元</text>
+            <text class='f-34'>{{item.total_price}}</text><text class='f-30'>元</text>
           </view>
         </view>
       </view>

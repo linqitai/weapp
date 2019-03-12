@@ -7,7 +7,8 @@
 }
 .list .item{
   display: flex;
-  padding: 28rpx 0;
+  padding-top: 20rpx;
+  padding-bottom: 8rpx;
   border-bottom: 1rpx solid #efefef;
 }
 .list .item .item_left{

@@ -3,7 +3,11 @@
 }
 .list .item{
   display: flex;
-  padding: 20rpx 32rpx;
+  /* padding: 20rpx 32rpx; */
+  padding-top: 10rpx;
+  padding-bottom: 12rpx;
+  padding-left: 32rpx;
+  padding-right: 32rpx;
 }
 .list .item .item_left{
   flex: 0 0 150rpx;

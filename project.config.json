@@ -115,6 +115,11 @@
           "id": -1,
           "name": "充值成功",
           "pathName": "pages/person/chongzhi/success"
+        },
+        {
+          "id": -1,
+          "name": "明细",
+          "pathName": "pages/person/bill/bill"
         }
 			]
 		}

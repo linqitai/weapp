@@ -15,7 +15,7 @@
       <view class='moneyBox'>
         <view class='leftMoney'>
           <view class='line1'>{{available}}</view>
-          <view class='line2'>可提现佣金（元）</view>
+          <view class='line2'>可提现佣金</view>
         </view>
         <view class='rightMoney'>
           <van-button class='getMoney' type="default" size="small" bind:click="getMoneyBtn">提现</van-button>
@@ -25,16 +25,16 @@
     <view class='moneyRecordBox box_border_radius box_margin_top'>
       <view class='leftRecord'>
         <view class='line1'>{{total}}</view>
-        <view class='line2'>总佣金（元）</view>
+        <view class='line2'>总佣金</view>
       </view>
       <view class='rightRecord'>
         <view class='line1'>{{used}}</view>
-        <view class='line2'>已使用佣金（元）</view>
+        <view class='line2'>已使用佣金</view>
       </view>
     </view>
     
     <view class='cell_group box_border_radius box_margin_top'>
-      <!-- <view class='cell'>
+      <view class='cell'>
         <view class='cell_icon'>
           <van-icon class='cell_right_icon' style='font-size: 24px;color: #FF9D42;' name="medel-o" />
         </view>
@@ -42,7 +42,7 @@
           <view class='cell_title left'>分销佣金</view>
           <van-icon class='cell_right_icon right' name="arrow" />
         </view>
-      </view> -->
+      </view>
       <navigator class='cell'  hover-class="navigator-hover" url="./order/order" open-type='navigate'>
         <view class='cell_icon'>
           <!-- <text class='icon icon-add2'></text> -->

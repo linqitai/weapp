@@ -17,8 +17,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
+    var _this = this;
     
+    this.getAccountInfo(_this.data.active)
+  },
+  getAccountInfo: function (active) { // 1银行卡 2支付宝
+    let _this = this;
+    let prams = {
+      type: (active + 1)
+    }
+    App._post_form('extract/get_bank', prams, function (result) {
+      _this.setData(result.data);
+    });
   },
   tabOnChange(event) {
     var _this = this;
@@ -30,7 +40,7 @@ Page({
       mobile: ''
     })
     console.log(_this.data.active, 'active')
-    // _this.getAccountInfo();
+    _this.getAccountInfo(_this.data.active);
   },
   getValue(e) {
     console.log(e, "e")

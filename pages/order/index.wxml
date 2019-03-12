@@ -47,7 +47,7 @@
             </view>
             <view class="order-box order-img_list">
               <view class="order-shop">
-                <view bindtap="detail" class="order-list-box dis-flex" data-id="{{item.order_id}}">
+                <navigator hover-class="navigator-hover" url="../order/detail?order_id={{item.order_id}}" open-type='navigate' class="order-list-box dis-flex" data-id="{{item.order_id}}">
                   <view class="left">
                     <view class="dis-flex">
                       <view class="order-shop-left" wx:for="{{item.goods}}" wx:key="goods">
@@ -59,7 +59,7 @@
                     <text class="goods-number">共{{item.goods.length}}件</text>
                     <text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
                   </view>
-                </view>
+                </navigator>
               </view>
             </view>
             <view class="order-box b-f">

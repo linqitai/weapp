@@ -14,18 +14,18 @@
             <view class='line1_edit right'>修改</view>
           </view> -->
         </view>
-        <view class='line2'>[{{userInfo.position.name}}]</view>
+        <view class='line2'>[{{userInfo.position_name}}]</view>
         <view class='line3'>推荐人：{{userInfo.parent_name?userInfo.parent_name:'无'}}</view>
       </view>
     </view>
     <view class='moneyBox'>
       <navigator hover-class="navigator-hover" url="./chongzhi/chongzhi" open-type='navigate' class='leftMoney' >
         <view class='line1'>{{userInfo.money['available']?userInfo.money['available']:'0.00'}}</view>
-        <view class='line2'>余额（元）</view>
+        <view class='line2'>余额</view>
       </navigator>
       <view class='rightMoney'>
         <view class='line1'>{{userInfo.integral.available?userInfo.integral.available:'0'}}</view>
-        <view class='line2'>积分</view>
+        <view class='line2'>佣金</view>
       </view>
     </view>
   </view>
@@ -84,17 +84,17 @@
         <text class='icon icon-zhangdan' style='font-size: 24px;color: #41BDF2;'></text>
         <!-- <van-icon class='cell_right_icon' style='font-size: 22px;color: #41BDF2;margin-left:1px;' name="orders-o" /> -->
       </view>
-      <view class='cell_content'>
+      <navigator url="./bill/bill" class='cell_content' open-type='navigate'>
         <view class='cell_title left'>账单明细</view>
         <van-icon class='cell_right_icon right' name="arrow" />
-      </view>
+      </navigator>
     </view>
     <view class='cell'>
       <view class='cell_icon'>
         <text class='icon icon-dizhi' style='font-size: 24px;color: #0CB7B9;'></text>
         <!-- <van-icon class='cell_right_icon' style='font-size: 24px;color: #FD6263;' name="balance-list-o" /> -->
       </view>
-      <navigator class='cell_content' url="../address/index">
+      <navigator class='cell_content' url="../address/index" open-type='navigate'>
         <view class='cell_title left'>收货地址</view>
         <van-icon class='cell_right_icon right' name="arrow" />
       </navigator>

@@ -33,6 +33,5 @@ textarea {
   margin-top: 16rpx;
 }
 .profile-btn button {
-  background: #ff495e;
   color: white;
 }

@@ -29,14 +29,14 @@
     <view class='tranparent_space'></view>
     <!-- 一级分类 -->
     <view class='cate'>
-      <view class='cateItem'>
+      <navigator hover-class="navigator-hover" url="../category/list" open-type='navigate' class='cateItem'>
         <view class='picBox'>
           <text class='icon icon-new' style='color:#FF922D'></text>
         </view>
         <view class='name'>
           新品
         </view>
-      </view>
+      </navigator>
       <navigator hover-class="navigator-hover" url="../center/center" open-type='switchTab' class='cateItem'>
         <view class='picBox'>
           <text class='icon icon-feiji' style='color:#FF69AA'></text>
