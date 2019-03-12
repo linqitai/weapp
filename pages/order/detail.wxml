@@ -59,7 +59,7 @@
           <image mode="scaleToFill" src="{{item.image.file_path}}"></image>
         </view>
         <view class="flow-list-center">
-          <text class="twolist-hidden color_text f-34">{{item.goods_name}} <text class='f-14'>X</text><text class='f-24'>{{item.total_num}}</text> </text>
+          <text class="twolist-hidden color_text f-34">{{item.goods_name}} <text class='f-16'>X</text><text class='f-24'>{{item.total_num}}</text> </text>
           <view class="color_text_l f-30" style='margin-top:28rpx;'>
             {{item.goods_attr}}
           </view>
