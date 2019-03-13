@@ -29,6 +29,10 @@ Page({
   onShow: function () {
     this.init_data();
   },
+  onPullDownRefresh: function () {
+    console.log("onPullDownRefresh")
+    this.init_data();
+  },
   init_data(){
     wx.showLoading()
     total_price = 0;

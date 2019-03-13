@@ -515,6 +515,7 @@ Page({
     }
     if (_this.data.hasError) {
       console.log(_this.data.hasError,"_this.data.hasError")
+      console.log(_this.data.error,"_this.data.error")
       App.showError(_this.data.error);
       return false;
     }
@@ -637,7 +638,6 @@ Page({
 
         }
       }, function() {
-        // complete
         console.log('complete');
         // 解除按钮禁用
         _this.data.disabled = false;
@@ -666,6 +666,9 @@ Page({
       }, function(result) {
         // fail
         console.log(result,'==fail==');
+        if (result.data.msg.indexOf('收货地址')>-1){
+          _this.toGetAddress()
+        }
         if (result.data.code==0) {
           if (result.data.msg.indexOf('商户')>-1){
             wx.navigateTo({
@@ -677,8 +680,7 @@ Page({
           
         }
       }, function() {
-        // complete
-        console.log('complete');
+        console.log('==========complete=============');
         // 解除按钮禁用
         _this.data.disabled = false;
       });

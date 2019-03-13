@@ -3,10 +3,10 @@
   <view class='line2'>{{userInfo.money['available']?userInfo.money['available']:'0.00'}}</view>
   <!-- <van-button class='submit' round="true" size="normal" type="info" bind:click="toApplyView">我要提现</van-button> -->
   <button class='submit' bindtap="toInputView">充值</button>
-  <view class='line4 color_text2'>充值须知
+  <!-- <view class='line4 color_text2'>充值须知
     <text class='theme_color'>了解详情</text>
-  </view>
-  <view class='line5 color_text2'>客服热线
-    <text class='theme_color'>4000-000-000</text>
+  </view> -->
+  <view class='line4 color_text2'>客服热线
+    <text class='theme_color'>{{phone}}</text>
   </view>
 </view>

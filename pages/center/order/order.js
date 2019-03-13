@@ -36,6 +36,11 @@ Page({
    */
   onShow: function () {
   },
+  onPullDownRefresh: function () {
+    // 获取当前订单信息
+    listArr = []
+    this.getList();
+  },
   scroll(e){
     console.log(e.detail)
   },
@@ -74,6 +79,7 @@ Page({
         list: listArr,
         last_page: result.data.last_page
       })
+      wx.stopPullDownRefresh()
     });
   }
 });

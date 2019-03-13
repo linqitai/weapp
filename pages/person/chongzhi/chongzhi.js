@@ -6,7 +6,8 @@ Page({
    */
   data: {
     userInfo: {},
-    orderCount: {}
+    orderCount: {},
+    phone:''
   },
   
   /**
@@ -22,6 +23,18 @@ Page({
    */
   onShow: function () {
     this.getUserDetail();
+    this.getPhone();
+  },
+  getPhone() {
+    let _this = this;
+    App._post_form('extract/get_phone', {}, function (result) {
+      console.log(result, 'result')
+      if (result.code == 1) {
+        _this.setData({
+          phone: result.data
+        })
+      }
+    });
   },
   toInputView(){
     wx.navigateTo({

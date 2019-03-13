@@ -29,12 +29,49 @@ Page({
     // 获取当前订单信息
     listArr = []
     this.getList();
+    // 刷新组件
+    this.refreshView = this.selectComponent("#refreshView")
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+  },
+  //触摸开始
+  handletouchstart: function (event) {
+    // console.log("触摸开始", event)
+    this.refreshView.handletouchstart(event)
+  },
+  //触摸移动
+  handletouchmove: function (event) {
+    // console.log("触摸开始", event)
+    this.refreshView.handletouchmove(event)
+  },
+  //触摸结束
+  handletouchend: function (event) {
+    // console.log("触摸结束")
+    this.refreshView.handletouchend(event)
+  },
+  //触摸取消
+  handletouchcancel: function (event) {
+    // console.log("触摸取消")
+    this.refreshView.handletouchcancel(event)
+  },
+  //页面滚动
+  onPageScroll: function (event) {
+    // console.log("页面滚动", event)
+    this.refreshView.onPageScroll(event)
+  },
+  onPullDownRefresh: function () {
+    console.log("onPullDownRefresh")
+    // setTimeout(() => { this.refreshView.stopPullRefresh() }, 2000)
+    // 获取首页数据
+    listArr = []
+    this.getList();
+  },
+  _pullState: function (e) {
+    console.log(e, "_pullState")
   },
   scroll(e) {
     // console.log(e.detail)
@@ -71,6 +108,7 @@ Page({
         list: listArr,
         last_page: result.data.last_page
       })
+      wx.stopPullDownRefresh();
     });
   },
   toUseBtn() {

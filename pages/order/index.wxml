@@ -94,7 +94,7 @@
         <view wx:else>
           <view class="yoshop-notcont">
             <text class="iconfont icon icon-null"></text>
-            <text class="cont">亲，您还没有订单信息哦！</text>
+            <text class="cont">亲，此处暂无数据</text>
           </view>
         </view>
       </view>

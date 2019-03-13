@@ -36,6 +36,11 @@ Page({
    */
   onShow: function () {
   },
+  onPullDownRefresh: function () {
+    // 获取当前订单信息
+    listArr = []
+    this.getList();
+  },
   scroll(e){
     // console.log(e.detail)
   },
@@ -61,16 +66,19 @@ Page({
       page: _this.data.page
     }, function (result) {
       var list = result.data.data
-      for(var i=0;i<list.length;i++) {
-        var time = list[i].create_time;
-        // console.log(time.split(' ')[0],"time.split(' ')[0]")
-        list[i].create_time = time.split(' ')[0]
-        listArr.push(list[i])
+      if (list){
+        for (var i = 0; i < list.length; i++) {
+          var time = list[i].create_time;
+          // console.log(time.split(' ')[0],"time.split(' ')[0]")
+          list[i].create_time = time.split(' ')[0]
+          listArr.push(list[i])
+        }
       }
       _this.setData({
         list: listArr,
         last_page: result.data.last_page
       })
+      wx.stopPullDownRefresh()
     });
   },
   toUseBtn(){

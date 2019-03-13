@@ -30,7 +30,11 @@ Page({
     listArr = []
     this.getList();
   },
-
+  onPullDownRefresh: function () {
+    // 获取当前订单信息
+    listArr = []
+    this.getList();
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -62,16 +66,19 @@ Page({
     }, function (result) {
       var list = result.data.data
       console.log(list,"list")
-      for(var i=0;i<list.length;i++) {
-        var time = list[i].create_time;
-        // console.log(time.split(' ')[0],"time.split(' ')[0]")
-        list[i].create_time = time.split(' ')[0]
-        listArr.push(list[i])
+      if(list){
+        for (var i = 0; i < list.length; i++) {
+          var time = list[i].create_time;
+          // console.log(time.split(' ')[0],"time.split(' ')[0]")
+          list[i].create_time = time.split(' ')[0]
+          listArr.push(list[i])
+        }
       }
       _this.setData({
         list: listArr,
         last_page: result.data.last_page
       })
+      wx.stopPullDownRefresh();
     });
   },
   toUseBtn(){

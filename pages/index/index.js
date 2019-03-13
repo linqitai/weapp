@@ -4,6 +4,7 @@ const App = getApp()
 
 Page({
   data: {
+    windowHeight:'',
     best:[],
     list:[],
     searchValue:'',
@@ -26,9 +27,18 @@ Page({
     }
   },
   onLoad: function () {
+    let _this = this;
     // 刷新组件
     this.refreshView = this.selectComponent("#refreshView")
     this.getList();
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res, "res")
+        _this.setData({
+          windowHeight: res.windowHeight
+        });
+      }
+    });
   },
   //触摸开始
   handletouchstart: function (event) {
@@ -59,7 +69,14 @@ Page({
     console.log("onPullDownRefresh")
     // setTimeout(() => { this.refreshView.stopPullRefresh() }, 2000)
     // 获取首页数据
+    wx.stopPullDownRefresh()
     this.getList();
+  },
+  scroll(e) {
+    // console.log(e.detail)
+  },
+  _pullState: function (e) {
+    console.log(e, "_pullState")
   },
   toDetailView(e){
     let url = e.currentTarget.dataset.url

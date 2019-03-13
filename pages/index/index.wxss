@@ -1,4 +1,7 @@
 /**index.wxss**/
+.height{
+  height: 100%;
+}
 .home_container{
   position: absolute;
   top: 0;

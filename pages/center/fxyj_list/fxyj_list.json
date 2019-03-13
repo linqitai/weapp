@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "分销佣金"
+  "navigationBarTitleText": "分销佣金",
+  "enablePullDownRefresh": true
 }

@@ -1,6 +1,7 @@
 <!--index.wxml-->
-<refresh-view id='refreshView' bind:onRefresh="onPullDownRefresh"/>
-<scroll-view class="home_container" scroll-y bindtouchstart='handletouchstart' bindtouchmove='handletouchmove' bindtouchend='handletouchend' bindtouchcancel='handletouchcancel'>
+<!-- <refresh-view id='refreshView' bind:onRefresh="onPullDownRefresh"/> -->
+<view style="height:{{windowHeight}}px" class='order_container'>
+<scroll-view class="home_container" scroll-y="true" bindscroll="scroll" bindscrolltoupper="onPullDownRefresh">
   <view class='box1 wing_blank'>
     <!-- <view class='tranparent_space'></view> -->
     <navigator hover-class="none" openType="navigate" url="../search/index" class='search_box box_border_radius'>
@@ -67,3 +68,4 @@
   </view>
   <view class='tranparent_space'></view>
 </scroll-view>
+</view>

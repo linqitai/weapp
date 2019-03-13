@@ -56,12 +56,14 @@ Component({
     },
     //停止刷新
     stopPullRefresh() {
-      // this._pullStateChange(PULL_DEFAULT, 0)
+      console.log("-------------停止刷新----------------")
+      this._pullStateChange(PULL_DEFAULT, 0)
       this.setData({
         pullState: PULL_DEFAULT,
         dynamicHeight: 0
       }, () => {
         wx.pageScrollTo({scrollTop: 0,duration: 0})
+        console.log("-------------0----------------")
       })
 
     },
@@ -110,6 +112,7 @@ Component({
           this.triggerEvent("onRefresh")
         } else {
           this._pullStateChange(PULL_DEFAULT, 0)
+          console.log("scrollTop:0")
           wx.pageScrollTo({scrollTop: 0,duration: 0})
         }
         return

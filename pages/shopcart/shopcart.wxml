@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="shopcart_container">
-  <scroll-view
-    scroll-y
+  <scroll-view bindscrolltoupper="onPullDownRefresh"
+    scroll-y="true"
     class='scroll'
   >
     <block wx:if="{{goods_list.length}}">

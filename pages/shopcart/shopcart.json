@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "购物车",
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "van-icon": "../../dist/icon/index",
     "van-submit-bar": "../../dist/submit-bar/index"

@@ -12,6 +12,7 @@
 
 page {
   background: #f7f7f7;
+  height: 100%;
 }
 .margR{
   margin-right: 20rpx;
