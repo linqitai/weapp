@@ -32,7 +32,7 @@
       <view class='f-32' style='margin-top:18rpx;'>进入商城</view>
     </view>
   </view>
-  <view class='line3'>
+  <view class='line3' bindlongpress='savePhoto'>
     <image src='{{image}}'></image>
   </view>
 </view>

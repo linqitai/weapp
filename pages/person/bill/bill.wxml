@@ -2,7 +2,7 @@
     <scroll-view class="list" lower-threshold="100" scroll-y="true" bindscrolltolower="scrollToBottom" bindscroll="scroll" wx:if="{{list.length}}">
       <view class='item' wx:for="{{list}}" wx:key="{{index}}">
         <view class='item_left'>
-            <view class='f-32 type'>{{item.type}}</view>
+            <view class='f-30 type'>{{item.type}}</view>
             <view class='f-28 color_text_l remark'>{{item.remark}}</view>
         </view>
         <view class='item_right'>
@@ -18,7 +18,7 @@
     <view wx:else>
       <view class="yoshop-notcont">
         <text class="iconfont icon-null icon"></text>
-        <text class="cont">亲，您还没有团队</text>
+        <text class="cont">亲，此处暂无数据</text>
       </view>
     </view>
 </view>

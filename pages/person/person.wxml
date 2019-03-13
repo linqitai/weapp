@@ -23,10 +23,10 @@
         <view class='line1'>{{userInfo.money['available']?userInfo.money['available']:'0.00'}}</view>
         <view class='line2'>余额</view>
       </navigator>
-      <view class='rightMoney'>
+      <navigator hover-class="navigator-hover" url="../center/getMoney/getMoney" open-type='navigate' class='rightMoney'>
         <view class='line1'>{{userInfo.integral.available?userInfo.integral.available:'0'}}</view>
         <view class='line2'>佣金</view>
-      </view>
+      </navigator>
     </view>
   </view>
   <view class='orderRecordBox box_border_radius box_margin_top'>
@@ -109,6 +109,7 @@
           <view class='cell_title left'>客服热线</view>
           <van-icon class='cell_right_icon right' name="arrow" />
         </button>
+        <text class='phone dec_color f-34 right' bindtap='call'>{{phone}}</text>
       </view>
     </view>
   </view>

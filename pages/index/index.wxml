@@ -1,5 +1,6 @@
 <!--index.wxml-->
-<scroll-view class="home_container" scroll-y>
+<refresh-view id='refreshView' bind:onRefresh="onPullDownRefresh"/>
+<scroll-view class="home_container" scroll-y bindtouchstart='handletouchstart' bindtouchmove='handletouchmove' bindtouchend='handletouchend' bindtouchcancel='handletouchcancel'>
   <view class='box1 wing_blank'>
     <!-- <view class='tranparent_space'></view> -->
     <navigator hover-class="none" openType="navigate" url="../search/index" class='search_box box_border_radius'>
@@ -7,20 +8,6 @@
     </navigator>
     <!-- <include src="components/search/search.wxml" /> -->
     <view class='tranparent_space'></view>
-    <!-- <swiper
-      class='box_border_radius swiper'
-      indicator-dots="{{indicatorDots}}"
-      autoplay="{{autoplay}}"
-      interval="{{interval}}"
-      duration="{{duration}}"
-    >
-      <block wx:for="{{list}}" wx:key="{{index}}">
-        <swiper-item class="box_border_radius">
-          <image src="{{item.image}}" class="slide-image box_border_radius"/>
-        </swiper-item>
-      </block>
-    </swiper> -->
-    <!-- {{list[0].image}} -->
     <swiper class="box_border_radius swiper" autoplay="{{autoplay}}" duration="{{duration}}" circular="{{true}}" indicator-dots="{{indicatorDots}}" interval="{{interval}}"  indicator-active-color="#000" style="height:{{imgHeights[0][imgCurrent[0]]}}rpx">
       <swiper-item wx:for="{{list}}" wx:key="this" class="box_border_radius">
         <image class="slide-image box_border_radius" bindload="imagesHeight" src="{{item.image}}" data-id="{{index}}" data-index="{{index}}" bindtap='toDetailView' data-url='{{item.url}}'></image>

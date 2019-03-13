@@ -19,7 +19,7 @@
     <view wx:else>
       <view class="yoshop-notcont">
         <text class="iconfont icon-null icon"></text>
-        <text class="cont">亲，您还没有团队</text>
+        <text class="cont">亲，此处暂无数据</text>
       </view>
     </view>
     
