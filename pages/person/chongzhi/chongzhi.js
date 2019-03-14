@@ -25,6 +25,11 @@ Page({
     this.getUserDetail();
     this.getPhone();
   },
+  toApplyView() {
+    wx.navigateTo({
+      url: '../../center/apply/apply?active=0',
+    })
+  },
   getPhone() {
     let _this = this;
     App._post_form('extract/get_phone', {}, function (result) {

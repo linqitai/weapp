@@ -72,6 +72,7 @@
 }
 .line2 .tip2{
   margin-top: 50rpx;
+  margin-left: 24rpx;
 }
 .line2 .icon_btn{
   height: 200rpx;

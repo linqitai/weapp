@@ -12,11 +12,17 @@ Page({
     money:'',
     remark:''
   },
-  
+  onLoad(options){
+    var _this = this;
+    console.log(options.active, "active")
+    if (options.active && options.active == 0) {
+      _this.setData({ active: options.active })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onShow: function (options) {
+  onShow: function () {
     var _this = this;
     _this.getAccountInfo();
   },
