@@ -22,6 +22,16 @@
   background-color: #0D8BFF;
   margin-top: 80rpx;
 }
+.toGetMoneyBtn{
+  width: 400rpx !important;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-radius: 82rpx;
+  color: #646464;
+  font-size: 32rpx;
+  background-color: #efeff4;
+  margin-top: 80rpx;
+}
 .line4{
   font-size: 36rpx;
   text-align: center;
