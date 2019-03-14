@@ -3,7 +3,7 @@
   <view class='line2'>{{userInfo.money['available']?userInfo.money['available']:'0.00'}}</view>
   <!-- <van-button class='submit' round="true" size="normal" type="info" bind:click="toApplyView">我要提现</van-button> -->
   <button class='submit' bindtap="toInputView">充值</button>
-  <button class='toGetMoneyBtn' style='margin-top:40rpx;' bindtap="toApplyView">提现</button>
+  <view class='toGetMoneyBtn' bindtap="toApplyView">提现</view>
   <!-- <view class='line4 color_text2'>充值须知
     <text class='theme_color'>了解详情</text>
   </view> -->

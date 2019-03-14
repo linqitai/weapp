@@ -30,7 +30,15 @@
   color: #646464;
   font-size: 32rpx;
   background-color: #efeff4;
-  margin-top: 80rpx;
+  margin-top:40rpx;
+  text-align: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+.toGetMoneyBtn:active{
+  background-color: #e8e8e8;
 }
 .line4{
   font-size: 36rpx;
