@@ -1,5 +1,4 @@
 {
-  "enablePullDownRefresh": true,
   "usingComponents": {
     "i-divider": "../../dist/divider/index",
     "refresh-view": "/components/RefreshView/refresh-view"

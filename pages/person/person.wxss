@@ -29,7 +29,6 @@
   width: 140rpx;
   height: 140rpx;
   border-radius: 100%;
-  background-color: rgb(25, 25, 167);
   display: block;
 }
 .personInfoBox .rightInfo{

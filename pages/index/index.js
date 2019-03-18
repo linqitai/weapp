@@ -115,6 +115,7 @@ Page({
     App._get('index/index', {}, function (result) {
       console.log(result,"result")
       _this.setData(result.data)
+      _this.refreshView.stopPullRefresh();
     });
   },
   onSearch(e){

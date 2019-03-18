@@ -34,7 +34,7 @@ Page({
     this.init_data();
   },
   init_data(){
-    wx.showLoading()
+    // wx.showLoading()
     total_price = 0;
     this.setData({
       is_select_all: true

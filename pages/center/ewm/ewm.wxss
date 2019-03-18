@@ -18,7 +18,7 @@
   width: 200rpx;
   height: 200rpx;
   border-radius: 100%;
-  background-color: yellow;
+  background-color: #0D8BFF;
 }
 .line1 .name{
   margin-top: 14rpx;
@@ -84,5 +84,5 @@
 .line3 image{
   width: 300rpx;
   height: 300rpx;
-  background-color: yellow;
+  background-color: #0D8BFF;
 }

@@ -6,7 +6,10 @@
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
-} 
+}
+.new_container{
+  height: 100%;
+}
 .theme_color{color: #0D8BFF;}
 .dec_color{color:#FF6000;}
 .bg_color{background-color: #F6F6F6;}

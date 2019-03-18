@@ -73,14 +73,17 @@ Component({
     },
     //是否下拉状态
     isPullState() {
+      // console.log('是否下拉状态')
       return PULL_DEFAULT != this.data.pullState
     },
     //页面触摸开始事件，必须在触摸开始方法中调用此方法
     handletouchstart: function(event) {
+      // console.log("页面触摸开始事件")
       lastY = event.touches[0].clientY
     },
     //页面触摸移动事件，必须在触摸开始方法中调用此方法
     handletouchmove: function(event) {
+      // console.log("页面触摸移动事件")
       let pageY = event.touches[0].pageY
       let clientY = event.touches[0].clientY
       let offsetY = clientY - lastY
@@ -112,7 +115,7 @@ Component({
           this.triggerEvent("onRefresh")
         } else {
           this._pullStateChange(PULL_DEFAULT, 0)
-          console.log("scrollTop:0")
+          // console.log("scrollTop:0")
           wx.pageScrollTo({scrollTop: 0,duration: 0})
         }
         return
@@ -151,6 +154,7 @@ Component({
     },
     //下拉状态监听
     _pullStateChange(state, dynamicHeight) {
+      console.log(state, dynamicHeight)
       this.setData({pullState: state,dynamicHeight: dynamicHeight})
       this.triggerEvent("onPullState")
     }
