@@ -24,7 +24,7 @@ Page({
       wx.setStorageSync('type', options.type)
     }
     // 获取订单列表
-    this.getOrderList(this.data.dataType);
+    this.getOrderList(this.data.dataType || wx.getStorageSync('type'));
 
     let pages = getCurrentPages();
     console.log(pages[pages.length - 1].route, "last_pages.route-1")
@@ -72,8 +72,10 @@ Page({
    * 切换标签
    */
   bindHeaderTap: function (e) {
+    let dataType = e.target.dataset.type;
     console.log(e.target.dataset.type,"e.target.dataset.type")
-    this.setData({ dataType: e.target.dataset.type });
+    this.setData({ dataType: dataType });
+    wx.setStorageSync('type', dataType)
     // 获取订单列表
     this.getOrderList(e.target.dataset.type);
   },

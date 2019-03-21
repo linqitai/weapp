@@ -34,9 +34,10 @@ Page({
   onUnload: function () {
     console.log('detail onUnload')
     let _this = this;
+    console.log(wx.getStorageSync('to_view'),"wx.getStorageSync('to_view')")
     if(wx.getStorageSync('to_view')=='person'){
-      wx.switchTab({
-        url: '../person/person',
+      wx.navigateTo({
+        url: '../order/index',
       })
     }
   },
