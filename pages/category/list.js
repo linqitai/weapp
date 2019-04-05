@@ -29,7 +29,7 @@ Page({
     let _this = this;
 
     // 设置商品列表高度
-    // _this.setListHeight();
+    _this.setListHeight();
 
     // 记录option
     _this.setData({ option}, function () {
@@ -70,7 +70,7 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         _this.setData({
-          scrollHeight: res.windowHeight - 90,
+          scrollHeight: res.windowHeight,
         });
       }
     });

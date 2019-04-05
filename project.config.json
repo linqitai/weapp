@@ -49,9 +49,14 @@
 				},
         {
           "id": -1,
-          "name": "分销佣金",
-          "pathName": "pages/center/fxyj_list"
+          "name": "商品列表",
+          "pathName": "pages/category/list"
         },
+				{
+					"id": -1,
+					"name": "分销佣金",
+					"pathName": "pages/center/fxyj_list"
+				},
 				{
 					"id": -1,
 					"name": "购物车",
@@ -72,60 +77,61 @@
 					"name": "订单确认",
 					"pathName": "pages/flow/checkout"
 				},
-        {
-          "id": -1,
-          "name": "我的团队",
-          "pathName": "pages/center/team/team"
-        },
-        {
-          "id": -1,
-          "name": "分销订单",
-          "pathName": "pages/center/order/order"
-        },
-        {
-          "id": -1,
-          "name": "佣金提现",
-          "pathName": "pages/center/getMoney/getMoney"
-        },
-        {
-          "id": -1,
-          "name": "申请提现",
-          "pathName": "pages/center/apply/apply"
-        },
-        {
-          "id": -1,
-          "name": "小程序推广码",
-          "pathName": "pages/center/ewm/ewm"
-        },
-        {
-          "id": -1,
-          "name": "提现明细",
-          "pathName": "pages/center/getMoneyDetail/getMoneyDetail"
-        },
-        {
-          "id": -1,
-          "name": "绑定信息",
-          "pathName": "pages/center/bind/bind"
-        },{
-          "id": -1,
-          "name": "充值",
-          "pathName": "pages/person/chongzhi/chongzhi"
-        },
-        {
-          "id": -1,
-          "name": "账户充值",
-          "pathName": "pages/person/chongzhi/input"
-        },
-        {
-          "id": -1,
-          "name": "充值成功",
-          "pathName": "pages/person/chongzhi/success"
-        },
-        {
-          "id": -1,
-          "name": "明细",
-          "pathName": "pages/person/bill/bill"
-        }
+				{
+					"id": -1,
+					"name": "我的团队",
+					"pathName": "pages/center/team/team"
+				},
+				{
+					"id": -1,
+					"name": "分销订单",
+					"pathName": "pages/center/order/order"
+				},
+				{
+					"id": -1,
+					"name": "佣金提现",
+					"pathName": "pages/center/getMoney/getMoney"
+				},
+				{
+					"id": -1,
+					"name": "申请提现",
+					"pathName": "pages/center/apply/apply"
+				},
+				{
+					"id": -1,
+					"name": "小程序推广码",
+					"pathName": "pages/center/ewm/ewm"
+				},
+				{
+					"id": -1,
+					"name": "提现明细",
+					"pathName": "pages/center/getMoneyDetail/getMoneyDetail"
+				},
+				{
+					"id": -1,
+					"name": "绑定信息",
+					"pathName": "pages/center/bind/bind"
+				},
+				{
+					"id": -1,
+					"name": "充值",
+					"pathName": "pages/person/chongzhi/chongzhi"
+				},
+				{
+					"id": -1,
+					"name": "账户充值",
+					"pathName": "pages/person/chongzhi/input"
+				},
+				{
+					"id": -1,
+					"name": "充值成功",
+					"pathName": "pages/person/chongzhi/success"
+				},
+				{
+					"id": -1,
+					"name": "明细",
+					"pathName": "pages/person/bill/bill"
+				}
 			]
 		}
 	}

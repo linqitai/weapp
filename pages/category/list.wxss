@@ -139,11 +139,12 @@
 
 .category-list {
   overflow: hidden;
+  margin-bottom: 100rpx;
 }
 
 .category-list .list {
   box-sizing: border-box;
-  width: 50%;
+  width: 45%;
   float: left;
 }
 
@@ -157,13 +158,13 @@
   border-bottom: 4px solid #f7f7f7;
 }
 
-.category-list .list .left, .category-list .right {
+/* .category-list .list .left, .category-list .right {
   width: 100%;
-}
+} */
 
 .category-list .list .left .img image {
   width: 100%;
-  height: 375rpx;
+  height: 375rpx; 
   display: block;
 }
 
@@ -195,4 +196,53 @@
 .category-list.arrange .list .left .img image {
   width: 220rpx;
   height: 220rpx;
+}
+
+.category-list .list {
+  box-sizing:border-box;
+  width:49%;
+  float:left;
+}
+.category-list .list:nth-child(odd){
+  margin-right: 1%;
+}
+
+
+.goods_list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.goods_list .item{
+  flex:0 0 44%;
+  background-color: white;
+  margin-right: 6rpx;
+  margin-left: 6rpx;
+  margin-bottom: 14rpx;
+  border-radius: 12rpx;
+  padding: 14rpx;
+}
+.category-list .list{
+  margin-bottom: 6rpx;
+  padding: 14rpx;
+}
+.category-list .list .buy .buyleft {
+  float: left;
+}
+.category-list .list .buy .buyright {
+  float: right;
+}
+.category-list .list .goods_img{
+  width: 100%;
+  height: 340rpx;
+  /* background-color: #3B6BD7; */
+}
+.category-list .list .title{
+  color: #323232;
+  font-size: 32rpx;
+}
+.category-list .list .buy{
+  font-size: 32rpx;
+  margin-top: 10rpx;
 }
